@@ -197,6 +197,8 @@ a.contact__item:hover { border-color: var(--amber); }
 .footer__right { display: flex; gap: 24px; flex-wrap: wrap; }
 .footer a { color: #8a9bb3; text-decoration: none; }
 .footer a:hover { color: #fff; }
+.footer .footer__credit { color: var(--amber); }
+.footer .footer__credit:hover { color: #fff; }
 
 /* 404 */
 .notfound { min-height: 70vh; display: grid; place-items: center; text-align: center; padding: 80px 20px; }
