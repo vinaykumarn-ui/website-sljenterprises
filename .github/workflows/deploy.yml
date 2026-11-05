@@ -43,6 +43,10 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -p "$VPS_PORT" -H "$VPS_HOST" >> ~/.ssh/known_hosts
 
+      - name: Stamp asset URLs with the commit id
+        if: steps.check.outputs.ready == 'true'
+        run: sed -i "s/?v=dev/?v=${GITHUB_SHA::7}/g" site/*.html
+
       - name: Upload site to VPS
         if: steps.check.outputs.ready == 'true'
         run: |
