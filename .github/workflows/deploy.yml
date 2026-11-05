@@ -1,0 +1,57 @@
+name: Deploy website
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - ".github/workflows/deploy.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      VPS_HOST: ${{ secrets.VPS_HOST }}
+      VPS_USER: ${{ secrets.VPS_USER }}
+      VPS_PORT: ${{ secrets.VPS_PORT || '22' }}
+      VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+      DEPLOY_PATH: /var/www/sljenterprises.com/html
+    steps:
+      - name: Check that deploy secrets are configured
+        id: check
+        run: |
+          if [ -z "$VPS_HOST" ] || [ -z "$VPS_USER" ] || [ -z "$VPS_SSH_KEY" ]; then
+            echo "::warning::VPS_HOST, VPS_USER or VPS_SSH_KEY secret is missing. Skipping deploy. See DEPLOY.md."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.check.outputs.ready == 'true'
+
+      - name: Set up SSH key
+        if: steps.check.outputs.ready == 'true'
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$VPS_SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "$VPS_PORT" -H "$VPS_HOST" >> ~/.ssh/known_hosts
+
+      - name: Upload site to VPS
+        if: steps.check.outputs.ready == 'true'
+        run: |
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/deploy_key -p $VPS_PORT" \
+            site/ "$VPS_USER@$VPS_HOST:$DEPLOY_PATH/"
+
+      - name: Check the live site responds
+        if: steps.check.outputs.ready == 'true'
+        run: |
+          curl -fsS -o /dev/null -w "HTTP %{http_code}\n" --resolve "sljenterprises.com:80:$VPS_HOST" http://sljenterprises.com/ \
+            || echo "::warning::Site did not respond over HTTP. Check nginx on the VPS."

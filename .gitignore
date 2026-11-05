@@ -1,0 +1,7 @@
+.DS_Store
+Thumbs.db
+*.pem
+*_deploy
+*_deploy.pub
+.env
+.claude/
