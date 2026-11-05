@@ -83,3 +83,19 @@ Open <https://sljenterprises.com>. 🎉
 
 All public files live in `site/`. Open `site/index.html` in a browser to preview locally.
 Search for `TODO` to find content that still needs real details (company story, product specs, phone, address).
+
+---
+
+## Enquiry form mailer
+
+The contact form posts to `/api/enquiry`. nginx proxies it to a small Python service
+(`deploy/enquiry/app.py`, systemd unit `slje-enquiry`) that emails each enquiry from
+info@sljenterprises.com via GoDaddy SMTP (`smtpout.secureserver.net:465`) to info@,
+with a copy to prashanths123@gmail.com.
+
+- Install / update the service code (as root on the VPS): `bash /root/deploy/enquiry/install.sh`
+- Set or change the mailbox password (hidden prompt): `bash /root/deploy/enquiry/set-password.sh`
+  Run this again whenever the info@ mailbox password changes, or the form falls back to the email app.
+- Config: `/etc/slje-enquiry.env` (root only). Change `MAIL_TO` / `MAIL_CC` there, then `systemctl restart slje-enquiry`.
+- Logs: `journalctl -u slje-enquiry -n 50`
+- Spam protection: hidden honeypot field, minimum fill time, 5 enquiries/hour per IP (service) and 6/min (nginx).
