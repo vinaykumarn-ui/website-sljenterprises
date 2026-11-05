@@ -1,5 +1,8 @@
 # Deploying sljenterprises.com
 
+**Status:** live at <https://sljenterprises.com> since 2026-11-05.
+VPS: Hostinger KVM 1, Ubuntu 24.04, IP `189.72.144.147`. HTTPS by Let's Encrypt (auto-renews).
+
 ```
 GoDaddy (domain + email)  --A records-->  Hostinger KVM 1 VPS (nginx)  <--rsync over SSH--  GitHub Actions (on push to main)
 ```

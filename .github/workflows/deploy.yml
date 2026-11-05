@@ -32,7 +32,7 @@ jobs:
             echo "ready=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         if: steps.check.outputs.ready == 'true'
 
       - name: Set up SSH key
@@ -53,5 +53,5 @@ jobs:
       - name: Check the live site responds
         if: steps.check.outputs.ready == 'true'
         run: |
-          curl -fsS -o /dev/null -w "HTTP %{http_code}\n" --resolve "sljenterprises.com:80:$VPS_HOST" http://sljenterprises.com/ \
-            || echo "::warning::Site did not respond over HTTP. Check nginx on the VPS."
+          curl -fsS -o /dev/null -w "HTTP %{http_code}\n" --resolve "sljenterprises.com:443:$VPS_HOST" https://sljenterprises.com/ \
+            || echo "::warning::Site did not respond over HTTPS. Check nginx on the VPS."

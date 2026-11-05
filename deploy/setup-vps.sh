@@ -44,7 +44,8 @@ fi
 
 echo "==> Configuring nginx"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cp "$SCRIPT_DIR/nginx/${DOMAIN}.conf" "/etc/nginx/sites-available/${DOMAIN}"
+# Keep an existing config so HTTPS settings added by certbot are not lost on re-runs
+[ -f "/etc/nginx/sites-available/${DOMAIN}" ] || cp "$SCRIPT_DIR/nginx/${DOMAIN}.conf" "/etc/nginx/sites-available/${DOMAIN}"
 ln -sf "/etc/nginx/sites-available/${DOMAIN}" "/etc/nginx/sites-enabled/${DOMAIN}"
 rm -f /etc/nginx/sites-enabled/default
 nginx -t
