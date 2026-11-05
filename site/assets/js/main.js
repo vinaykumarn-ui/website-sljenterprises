@@ -145,26 +145,67 @@ if (lightbox) {
   });
 }
 
-// Enquiry form: opens the visitor's email app with the details filled in
+// Enquiry form: sends to /api/enquiry on our server. If the server cannot be
+// reached it falls back to opening the visitor's email app, pre-filled.
 const form = document.getElementById('enquiry-form');
 if (form) {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if (!form.reportValidity()) return;
-    const data = new FormData(form);
+  const started = Date.now();
+  const status = form.querySelector('.form__status');
+  const button = form.querySelector('button[type="submit"]');
+
+  const showStatus = (text, kind) => {
+    status.textContent = text;
+    status.dataset.kind = kind;
+    status.hidden = false;
+  };
+
+  const openMailApp = (data) => {
     const lines = [
-      `Name: ${data.get('name')}`,
-      `Phone: ${data.get('phone')}`,
-      `Company / Location: ${data.get('company') || '-'}`,
-      `Product: ${data.get('product')}`,
-      `Quantity: ${data.get('quantity') || '-'}`,
+      `Name: ${data.name}`,
+      `Phone: ${data.phone}`,
+      `Email: ${data.email || '-'}`,
+      `Company / Location: ${data.company || '-'}`,
+      `Product: ${data.product}`,
+      `Quantity: ${data.quantity || '-'}`,
       '',
-      data.get('message') || '',
+      data.message || '',
     ];
-    const subject = `Enquiry: ${data.get('product')} - ${data.get('name')}`;
+    const subject = `Enquiry: ${data.product} - ${data.name}`;
     window.location.href =
       `mailto:info@sljenterprises.com?cc=prashanths123@gmail.com` +
       `&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
-    form.querySelector('.form__note').hidden = false;
+    showStatus('Your email app should now open with the enquiry filled in. Please press send there. If nothing opened, call us on 99020 60783.', 'info');
+  };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    const data = Object.fromEntries(new FormData(form));
+    data.started = started;
+
+    button.disabled = true;
+    button.textContent = 'Sending…';
+    status.hidden = true;
+    try {
+      const res = await fetch('/api/enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const body = await res.json().catch(() => ({}));
+      if (res.ok && body.ok) {
+        form.reset();
+        showStatus('Thank you! Your enquiry has been sent. We will get back to you soon.', 'success');
+      } else if (res.status === 422 || res.status === 429) {
+        showStatus(body.error || 'Please check the form and try again.', 'error');
+      } else {
+        openMailApp(data);
+      }
+    } catch {
+      openMailApp(data);
+    } finally {
+      button.disabled = false;
+      button.textContent = 'Send enquiry';
+    }
   });
 }

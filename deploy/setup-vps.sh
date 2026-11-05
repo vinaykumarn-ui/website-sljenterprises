@@ -47,6 +47,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Keep an existing config so HTTPS settings added by certbot are not lost on re-runs
 [ -f "/etc/nginx/sites-available/${DOMAIN}" ] || cp "$SCRIPT_DIR/nginx/${DOMAIN}.conf" "/etc/nginx/sites-available/${DOMAIN}"
 install -m 644 "$SCRIPT_DIR/nginx/slje-security-headers.conf" /etc/nginx/snippets/
+install -m 644 "$SCRIPT_DIR/nginx/slje-ratelimit.conf" /etc/nginx/conf.d/
 ln -sf "/etc/nginx/sites-available/${DOMAIN}" "/etc/nginx/sites-enabled/${DOMAIN}"
 rm -f /etc/nginx/sites-enabled/default
 nginx -t

@@ -417,7 +417,12 @@
             <label>Name<input name="name" type="text" autocomplete="name" required></label>
             <label>Phone<input name="phone" type="tel" autocomplete="tel" inputmode="tel" pattern="[0-9 +\-]{10,15}" required></label>
           </div>
-          <label>Company / location<input name="company" type="text" autocomplete="organization"></label>
+          <div class="form__row">
+            <label>Email <span class="form__optional">(optional)</span><input name="email" type="email" autocomplete="email"></label>
+            <label>Company / location<input name="company" type="text" autocomplete="organization"></label>
+          </div>
+          <!-- Spam trap: hidden from people, bots tend to fill it in -->
+          <label class="form__trap" aria-hidden="true">Website<input name="website" type="text" tabindex="-1" autocomplete="off"></label>
           <div class="form__row">
             <label>Product
               <select name="product" required>
@@ -439,7 +444,7 @@
           </div>
           <label>Message<textarea name="message" rows="3" placeholder="Delivery location, timeline or any other details"></textarea></label>
           <button type="submit" class="btn btn--amber">Send enquiry</button>
-          <p class="form__note" hidden>Your email app should now open with the enquiry filled in. Please press send there. If nothing opened, call us on 99020 60783.</p>
+          <p class="form__status" role="status" aria-live="polite" hidden></p>
         </form>
       </div>
     </section>
