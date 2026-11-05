@@ -6,6 +6,7 @@
   <title>SLJ Enterprises | PSCC, RCC &amp; Spun Electric Poles, Concrete Blocks | Bengaluru</title>
   <meta name="description" content="SLJ Enterprises, Bengaluru: BESCOM approved vendor manufacturing PSCC, RCC and PSCC spun electric poles at Dabaspet, and concrete blocks at Tavarekere. Over 10,000 poles supplied.">
   <link rel="canonical" href="https://sljenterprises.com/">
+  <meta name="theme-color" content="#0b2545">
   <meta property="og:title" content="SLJ Enterprises | Concrete Products">
   <meta property="og:description" content="BESCOM approved manufacturer of PSCC, RCC and spun electric poles, and concrete blocks, Bengaluru.">
   <meta property="og:url" content="https://sljenterprises.com/">
@@ -22,19 +23,11 @@
     "@type": "Organization",
     "name": "SLJ Enterprises",
     "url": "https://sljenterprises.com/",
-    "logo": "https://sljenterprises.com/assets/logo.svg?v=dev",
+    "logo": "https://sljenterprises.com/assets/logo.svg",
     "foundingDate": "2015",
     "telephone": ["+91-9902060783", "+91-8310814766"],
     "email": ["info@sljenterprises.com", "prashanths123@gmail.com"],
     "address": [
-      {
-        "@type": "PostalAddress",
-        "streetAddress": "Plot No 166-B, Avverahalli Industrial Area, 4th Phase KIADB Dabaspet, Sy No 7/4-P, Sompura Hobli, Nelamangala Taluk",
-        "addressLocality": "Bengaluru Rural District",
-        "addressRegion": "Karnataka",
-        "postalCode": "562111",
-        "addressCountry": "IN"
-      },
       {
         "@type": "PostalAddress",
         "streetAddress": "Sy No 127/2, Ajjanahalli, Tavarekere Hobli",
@@ -42,109 +35,160 @@
         "addressRegion": "Karnataka",
         "postalCode": "562130",
         "addressCountry": "IN"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Plot No 166-B, Avverahalli Industrial Area, 4th Phase KIADB Dabaspet, Sy No 7/4-P, Sompura Hobli, Nelamangala Taluk",
+        "addressLocality": "Bengaluru Rural District",
+        "addressRegion": "Karnataka",
+        "postalCode": "562111",
+        "addressCountry": "IN"
       }
     ]
   }
   </script>
 </head>
 <body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="header">
     <div class="container header__inner">
-      <a class="brand" href="#top" aria-label="SLJ Enterprises home">
-        <img src="assets/logo.svg?v=dev" alt="" width="40" height="40">
-        <span class="brand__text">SLJ Enterprises<small>Concrete Products</small></span>
+      <a class="brand" href="#top" aria-label="SLJ Enterprises, back to top">
+        <img src="assets/logo.svg?v=dev" alt="SLJ Enterprises" width="194" height="64">
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
-      <nav class="nav" id="nav">
+      <nav class="nav" id="nav" aria-label="Main">
         <a href="#about">About</a>
         <a href="#products">Products</a>
+        <a href="#guide">Pole Guide</a>
         <a href="#gallery">Gallery</a>
         <a href="#units">Our Units</a>
-        <a href="tel:+919902060783" class="btn btn--small">Call 99020 60783</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="btn btn--small">Get a Quote</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="main">
+    <!-- Hero -->
     <section class="hero">
       <div class="container hero__grid">
         <div class="hero__text">
-          <p class="eyebrow">BESCOM Approved Vendor &middot; Bengaluru</p>
-          <h1>Electric poles &amp; concrete products</h1>
+          <span class="chip"><span class="chip__dot" aria-hidden="true"></span>BESCOM Approved Vendor</span>
+          <h1>Concrete electric poles &amp; blocks, <span class="accent">made in Bengaluru</span></h1>
           <p class="kn" lang="kn">ಎಸ್.ಎಲ್.ಜೆ ಎಂಟರ್‌ಪ್ರೈಸಸ್</p>
-          <p class="lead">Manufacturers of PSCC, RCC and PSCC spun electric poles at Dabaspet, and concrete blocks at Tavarekere.</p>
+          <p class="lead">PSCC, RCC and PSCC spun electric poles from our Dabaspet unit, and concrete blocks from our Tavarekere unit.</p>
           <div class="hero__actions">
-            <a href="#contact" class="btn">Enquire now</a>
-            <a href="#products" class="btn btn--ghost">View products</a>
+            <a href="#contact" class="btn btn--amber">Get a quote</a>
+            <a href="tel:+919902060783" class="btn btn--ghost">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+              99020 60783
+            </a>
           </div>
         </div>
-        <figure class="hero__photo">
-          <picture>
+        <div class="hero__media">
+          <picture class="hero__main">
             <source srcset="assets/img/spun-poles-yard.webp" type="image/webp">
-            <img src="assets/img/spun-poles-yard.jpg" alt="Stack of concrete spun poles in the SLJ Enterprises yard" width="960" height="512">
+            <img src="assets/img/spun-poles-yard.jpg" alt="Stack of concrete spun poles in the SLJ Enterprises yard" width="960" height="512" fetchpriority="high">
           </picture>
-        </figure>
+          <picture class="hero__inset">
+            <source srcset="assets/img/casting-yard.webp" type="image/webp">
+            <img src="assets/img/casting-yard.jpg" alt="Pole casting yard with gantry" width="336" height="175">
+          </picture>
+          <div class="hero__badge">
+            <strong>Valid to 24.04.2030</strong>
+            <span>BESCOM vendor approval</span>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- Key numbers -->
     <section class="stats" aria-label="Key facts">
       <div class="container stats__grid">
-        <div><strong>2015</strong><span>Established</span></div>
-        <div><strong>10,000+</strong><span>Poles supplied</span></div>
-        <div><strong>60</strong><span>Poles per day capacity</span></div>
-        <div><strong>BESCOM &amp; CESC</strong><span>Vendor licences</span></div>
+        <div class="stat"><strong data-count="2015" data-plain="1">2015</strong><span>Established</span></div>
+        <div class="stat"><strong data-count="10000" data-suffix="+">10,000+</strong><span>Poles supplied</span></div>
+        <div class="stat"><strong data-count="60">60</strong><span>Poles per day capacity</span></div>
+        <div class="stat"><strong data-count="2">2</strong><span>Manufacturing units</span></div>
       </div>
     </section>
 
+    <!-- About + approval -->
     <section class="section" id="about">
-      <div class="container split">
+      <div class="container about">
         <div>
           <p class="eyebrow">About us</p>
           <h2>From concrete blocks to electric poles</h2>
-        </div>
-        <div>
           <p>SLJ Enterprises was started in 2015 with the help of family and friends. We began by manufacturing concrete blocks of 4, 6 and 8 inches and have served many contractors, builders and the public.</p>
-          <p>In December 2024 we started pole manufacturing at Dabaspet. We hold vendor licences from the <strong>BESCOM</strong> and <strong>CESC Mysore</strong> divisions, have supplied more than 10,000 poles to date, and have a production capacity of 60 poles per day.</p>
+          <p>In December 2024 we started pole manufacturing at Dabaspet. We have supplied more than 10,000 poles to date and have a production capacity of 60 poles per day.</p>
+          <ul class="timeline">
+            <li><strong>2015</strong><span>Concrete block production begins</span></li>
+            <li><strong>Dec 2024</strong><span>Pole manufacturing starts at Dabaspet</span></li>
+            <li><strong>Jul 2026</strong><span>BESCOM vendor approval renewed</span></li>
+          </ul>
         </div>
+        <aside class="approval-card" aria-label="Approvals">
+          <div class="approval-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2l7 3v6c0 4.6-3 8.7-7 10-4-1.3-7-5.4-7-10V5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 12l2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Approvals</h3>
+          <dl>
+            <div><dt>BESCOM</dt><dd>Approved vendor for the supply of the poles listed below, for BESCOM area electrification works. Valid up to 24.04.2030, subject to revalidation.</dd></div>
+            <div><dt>CESC Mysore</dt><dd>Vendor licence</dd></div>
+          </dl>
+        </aside>
       </div>
     </section>
 
-    <section class="section section--alt" id="approval">
-      <div class="container approval">
-        <div class="approval__badge" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="44" height="44"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#c27f00" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div>
-          <p class="eyebrow">Approval</p>
-          <h2>Approved vendor to BESCOM</h2>
-          <p>SLJ Enterprises is an approved vendor to Bangalore Electricity Supply Company Limited (BESCOM) for the supply of the poles listed below, for use in BESCOM area electrification works. The vendor approval was renewed in July 2026 and is valid up to <strong>24.04.2030</strong>, subject to revalidation.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="products">
+    <!-- Products -->
+    <section class="section section--alt" id="products">
       <div class="container">
-        <p class="eyebrow">Products</p>
-        <h2>Electric poles</h2>
-        <p class="section__intro">Manufactured at our Dabaspet unit. WL = working load.</p>
-        <div class="table-wrap">
-          <table class="spec">
-            <thead>
-              <tr><th scope="col">Pole type</th><th scope="col">Length</th><th scope="col">Working load</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>PSCC pole</td><td>8 m</td><td>200 kg</td></tr>
-              <tr><td>PSCC pole</td><td>9 m</td><td>200 kg</td></tr>
-              <tr><td>PSCC pole</td><td>9 m</td><td>300 kg</td></tr>
-              <tr><td>PSCC pole</td><td>11 m</td><td>365 kg</td></tr>
-              <tr><td>RCC pole</td><td>8 m</td><td>115 kg</td></tr>
-              <tr><td>RCC pole</td><td>9 m</td><td>145 kg</td></tr>
-              <tr><td>PSCC spun pole</td><td>11 m</td><td>500 kg</td></tr>
-            </tbody>
-          </table>
+        <div class="section__head">
+          <div>
+            <p class="eyebrow">Products</p>
+            <h2>Electric poles</h2>
+            <p class="section__intro">Manufactured at our Dabaspet unit. All seven are on our BESCOM approved list.</p>
+          </div>
+          <div class="filter" role="group" aria-label="Filter poles by type">
+            <button type="button" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" data-filter="pscc" aria-pressed="false">PSCC</button>
+            <button type="button" data-filter="rcc" aria-pressed="false">RCC</button>
+            <button type="button" data-filter="spun" aria-pressed="false">Spun</button>
+          </div>
         </div>
+
+        <ul class="poles">
+          <li class="pole-card" data-type="pscc" style="--len: 8">
+            <div class="pole-card__viz" aria-hidden="true"><span></span></div>
+            <div class="pole-card__body"><span class="tag">PSCC pole</span><strong>8 m</strong><span>200 kg working load</span></div>
+          </li>
+          <li class="pole-card" data-type="pscc" style="--len: 9">
+            <div class="pole-card__viz" aria-hidden="true"><span></span></div>
+            <div class="pole-card__body"><span class="tag">PSCC pole</span><strong>9 m</strong><span>200 kg working load</span></div>
+          </li>
+          <li class="pole-card" data-type="pscc" style="--len: 9">
+            <div class="pole-card__viz" aria-hidden="true"><span></span></div>
+            <div class="pole-card__body"><span class="tag">PSCC pole</span><strong>9 m</strong><span>300 kg working load</span></div>
+          </li>
+          <li class="pole-card" data-type="pscc" style="--len: 11">
+            <div class="pole-card__viz" aria-hidden="true"><span></span></div>
+            <div class="pole-card__body"><span class="tag">PSCC pole</span><strong>11 m</strong><span>365 kg working load</span></div>
+          </li>
+          <li class="pole-card" data-type="rcc" style="--len: 8">
+            <div class="pole-card__viz" aria-hidden="true"><span></span></div>
+            <div class="pole-card__body"><span class="tag tag--rcc">RCC pole</span><strong>8 m</strong><span>115 kg working load</span></div>
+          </li>
+          <li class="pole-card" data-type="rcc" style="--len: 9">
+            <div class="pole-card__viz" aria-hidden="true"><span></span></div>
+            <div class="pole-card__body"><span class="tag tag--rcc">RCC pole</span><strong>9 m</strong><span>145 kg working load</span></div>
+          </li>
+          <li class="pole-card pole-card--spun" data-type="spun" style="--len: 11">
+            <div class="pole-card__viz" aria-hidden="true"><span></span></div>
+            <div class="pole-card__body"><span class="tag tag--spun">PSCC spun pole</span><strong>11 m</strong><span>500 kg working load</span></div>
+          </li>
+        </ul>
 
         <div class="product-row">
           <div>
@@ -155,6 +199,7 @@
               <li><strong>6&Prime;</strong><span>6 inch blocks</span></li>
               <li><strong>8&Prime;</strong><span>8 inch blocks</span></li>
             </ul>
+            <a href="#contact" class="btn btn--small product-row__cta">Enquire about blocks</a>
           </div>
           <picture class="product-row__photo">
             <source srcset="assets/img/blocks-stack-1.webp" type="image/webp">
@@ -164,11 +209,88 @@
       </div>
     </section>
 
-    <section class="section section--alt" id="gallery">
+    <!-- Pole guide: general product knowledge -->
+    <section class="section" id="guide">
+      <div class="container">
+        <p class="eyebrow">Pole guide</p>
+        <h2>Choosing the right pole</h2>
+        <p class="section__intro">A quick, general overview of the three pole types we make.</p>
+        <div class="guide">
+          <article class="guide__card">
+            <div class="guide__icon" aria-hidden="true"><svg viewBox="0 0 40 64"><path d="M16 4h8l4 56H12z"/><path class="wire" d="M18 10v46M22 10v46"/></svg></div>
+            <h3>PSCC pole</h3>
+            <p>Prestressed cement concrete. High-tensile steel wires are tensioned before the concrete sets, which makes the pole stronger and stiffer for its weight than a reinforced pole.</p>
+            <ul><li>Solid, tapered section</li><li>Lighter for the same load</li><li>Low maintenance</li></ul>
+          </article>
+          <article class="guide__card">
+            <div class="guide__icon" aria-hidden="true"><svg viewBox="0 0 40 64"><path d="M15 4h10l4 56H11z"/><path class="wire" d="M16 12h8M15 24h10M14 36h12M13 48h14"/></svg></div>
+            <h3>RCC pole</h3>
+            <p>Reinforced cement concrete. Steel reinforcement bars are cast into the concrete without prestressing. A simple, widely used option for lighter line loads.</p>
+            <ul><li>Steel-bar reinforcement</li><li>Suited to lighter loads</li><li>Straightforward to handle</li></ul>
+          </article>
+          <article class="guide__card">
+            <div class="guide__icon" aria-hidden="true"><svg viewBox="0 0 40 64"><path d="M15 4h10l5 56H10z"/><path class="hollow" d="M18 8h4l3 48h-10z"/></svg></div>
+            <h3>PSCC spun pole</h3>
+            <p>A hollow, round, tapered prestressed pole made by spinning the mould, which compacts the concrete. The round section is equally strong in every direction.</p>
+            <ul><li>Hollow, circular section</li><li>Dense, compacted concrete</li><li>Highest working load we make</li></ul>
+          </article>
+        </div>
+
+        <div class="guide__extra">
+          <div class="note">
+            <h3>What is &ldquo;working load&rdquo;?</h3>
+            <p>The working load is the sideways force the pole is designed to carry in normal service, such as wind on the pole and the pull of the conductors. A higher working load suits longer spans, heavier conductors and angle or end locations.</p>
+          </div>
+          <div class="uses">
+            <h3>Where concrete poles are used</h3>
+            <ul class="tags">
+              <li>LT distribution lines</li>
+              <li>HT distribution lines</li>
+              <li>Street lighting</li>
+              <li>Rural electrification</li>
+              <li>Utility &amp; turnkey works</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to order -->
+    <section class="section section--alt" id="order">
+      <div class="container">
+        <p class="eyebrow">How to order</p>
+        <h2>Three simple steps</h2>
+        <ol class="steps">
+          <li>
+            <span class="steps__num">1</span>
+            <h3>Share your requirement</h3>
+            <p>Pole type, length, working load, quantity and delivery location, or block size and quantity.</p>
+          </li>
+          <li>
+            <span class="steps__num">2</span>
+            <h3>Get a quotation</h3>
+            <p>We confirm availability, schedule and price for your order.</p>
+          </li>
+          <li>
+            <span class="steps__num">3</span>
+            <h3>Production &amp; dispatch</h3>
+            <p>Your poles or blocks are produced and loaded for delivery.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section" id="gallery">
       <div class="container">
         <p class="eyebrow">Gallery</p>
         <h2>From our units</h2>
+        <p class="section__intro">Tap a photo to view it larger.</p>
         <div class="gallery">
+          <figure class="gallery__wide">
+            <picture><source srcset="assets/img/spun-poles-yard.webp" type="image/webp"><img src="assets/img/spun-poles-yard.jpg" alt="Stack of concrete spun poles in the yard" width="960" height="512" loading="lazy"></picture>
+            <figcaption>Spun poles in the yard</figcaption>
+          </figure>
           <figure>
             <picture><source srcset="assets/img/casting-yard.webp" type="image/webp"><img src="assets/img/casting-yard.jpg" alt="Pole casting yard with gantry" width="336" height="175" loading="lazy"></picture>
             <figcaption>Pole casting yard</figcaption>
@@ -182,10 +304,10 @@
             <figcaption>Spun poles</figcaption>
           </figure>
           <figure>
-            <picture><source srcset="assets/img/poles-marked.webp" type="image/webp"><img src="assets/img/poles-marked.jpg" alt="Poles marked with SLJ, pole type and casting date" width="336" height="175" loading="lazy"></picture>
+            <picture><source srcset="assets/img/poles-marked.webp" type="image/webp"><img src="assets/img/poles-marked.jpg" alt="Poles marked with SLJ, pole type and date" width="336" height="175" loading="lazy"></picture>
             <figcaption>Poles marked with SLJ, pole type and date</figcaption>
           </figure>
-          <figure>
+          <figure class="gallery__wide">
             <picture><source srcset="assets/img/poles-truck-delivery.webp" type="image/webp"><img src="assets/img/poles-truck-delivery.jpg" alt="Truck loaded with concrete poles" width="631" height="307" loading="lazy"></picture>
             <figcaption>Poles loaded for delivery</figcaption>
           </figure>
@@ -199,13 +321,18 @@
           </figure>
           <figure>
             <picture><source srcset="assets/img/blocks-stack-2.webp" type="image/webp"><img src="assets/img/blocks-stack-2.jpg" alt="Concrete blocks stacked in the yard" width="780" height="957" loading="lazy"></picture>
+            <figcaption>Block stockyard</figcaption>
+          </figure>
+          <figure>
+            <picture><source srcset="assets/img/blocks-stack-3.webp" type="image/webp"><img src="assets/img/blocks-stack-3.jpg" alt="Tall stack of concrete blocks" width="780" height="957" loading="lazy"></picture>
             <figcaption>Concrete blocks</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <section class="section" id="units">
+    <!-- Units -->
+    <section class="section section--alt" id="units">
       <div class="container">
         <p class="eyebrow">Our units</p>
         <h2>Two manufacturing units in Bengaluru</h2>
@@ -216,7 +343,7 @@
               <span class="unit__tag">Unit 1 &middot; Concrete blocks</span>
               <h3>Tavarekere</h3>
               <address>Sy No 127/2, Ajjanahalli, Tavarekere Hobli, Bengaluru South, Bengaluru &ndash; 562130</address>
-              <a class="btn btn--small" href="https://www.google.com/maps?q=12.93490982055664,77.37337493896484&amp;z=17&amp;hl=en" target="_blank" rel="noopener">Open in Google Maps</a>
+              <a class="btn btn--small" href="https://www.google.com/maps?q=12.93490982055664,77.37337493896484&amp;z=17&amp;hl=en" target="_blank" rel="noopener">Get directions</a>
             </div>
           </article>
           <article class="unit">
@@ -225,55 +352,145 @@
               <span class="unit__tag">Unit 2 &middot; Electric poles</span>
               <h3>Dabaspet</h3>
               <address>Plot No 166-B, Avverahalli Industrial Area, 4th Phase KIADB Dabaspet, Sy No 7/4-P, Sompura Hobli, Nelamangala Taluk, Bengaluru Rural District, Bengaluru &ndash; 562111</address>
-              <a class="btn btn--small" href="https://www.google.com/maps?q=13.19649600982666,77.24968719482422&amp;z=17&amp;hl=en" target="_blank" rel="noopener">Open in Google Maps</a>
+              <a class="btn btn--small" href="https://www.google.com/maps?q=13.19649600982666,77.24968719482422&amp;z=17&amp;hl=en" target="_blank" rel="noopener">Get directions</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container faq">
+        <div>
+          <p class="eyebrow">FAQ</p>
+          <h2>Frequently asked questions</h2>
+          <p class="section__intro">Can&rsquo;t find your answer? Call us on <a href="tel:+919902060783">99020 60783</a>.</p>
+        </div>
+        <div class="faq__list">
+          <details>
+            <summary>Which electric poles do you supply?</summary>
+            <p>PSCC poles of 8 m (200 kg), 9 m (200 kg and 300 kg) and 11 m (365 kg); RCC poles of 8 m (115 kg) and 9 m (145 kg); and an 11 m PSCC spun pole (500 kg). Figures in brackets are working loads.</p>
+          </details>
+          <details>
+            <summary>Are you an approved vendor for BESCOM?</summary>
+            <p>Yes. SLJ Enterprises is an approved vendor to BESCOM for all seven poles above. The approval was renewed in July 2026 and is valid up to 24.04.2030, subject to revalidation. We also hold a vendor licence from CESC Mysore.</p>
+          </details>
+          <details>
+            <summary>How many poles can you produce?</summary>
+            <p>Our production capacity is 60 poles per day, and we have supplied more than 10,000 poles to date.</p>
+          </details>
+          <details>
+            <summary>Do you also make concrete blocks?</summary>
+            <p>Yes. We have made concrete blocks of 4, 6 and 8 inches at our Tavarekere unit since 2015.</p>
+          </details>
+          <details>
+            <summary>How do I get a quotation?</summary>
+            <p>Use the enquiry form below or call us. Tell us the pole type, length, working load, quantity and delivery location (or block size and quantity) and we will get back to you with a quote.</p>
+          </details>
+          <details>
+            <summary>Where are your units located?</summary>
+            <p>Unit 1 (concrete blocks) is at Ajjanahalli, Tavarekere Hobli, Bengaluru South. Unit 2 (electric poles) is in the KIADB Dabaspet industrial area, Nelamangala Taluk, Bengaluru Rural District.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
     <section class="section section--dark" id="contact">
-      <div class="container split">
+      <div class="container contact-grid">
         <div>
           <p class="eyebrow">Contact</p>
-          <h2>Enquire about poles or blocks</h2>
+          <h2>Request a quote</h2>
           <p>Contact person: <strong>Prashanth S.L.</strong></p>
+          <div class="contact">
+            <a class="contact__item" href="tel:+919902060783"><span>Phone</span><strong>+91 99020 60783</strong></a>
+            <a class="contact__item" href="tel:+918310814766"><span>Phone</span><strong>+91 83108 14766</strong></a>
+            <a class="contact__item contact__item--wide" href="mailto:info@sljenterprises.com?subject=Enquiry%20from%20sljenterprises.com"><span>Email</span><strong>info@sljenterprises.com</strong></a>
+            <a class="contact__item contact__item--wide" href="mailto:prashanths123@gmail.com?subject=Enquiry%20from%20sljenterprises.com"><span>Email</span><strong>prashanths123@gmail.com</strong></a>
+          </div>
         </div>
-        <div class="contact">
-          <a class="contact__item" href="tel:+919902060783">
-            <span>Phone</span>
-            <strong>+91 99020 60783</strong>
-          </a>
-          <a class="contact__item" href="tel:+918310814766">
-            <span>Phone</span>
-            <strong>+91 83108 14766</strong>
-          </a>
-          <a class="contact__item" href="mailto:info@sljenterprises.com?subject=Enquiry%20from%20sljenterprises.com">
-            <span>Email</span>
-            <strong>info@sljenterprises.com</strong>
-          </a>
-          <a class="contact__item" href="mailto:prashanths123@gmail.com?subject=Enquiry%20from%20sljenterprises.com">
-            <span>Email</span>
-            <strong>prashanths123@gmail.com</strong>
-          </a>
-        </div>
+
+        <form class="form" id="enquiry-form" novalidate>
+          <h3>Send an enquiry</h3>
+          <div class="form__row">
+            <label>Name<input name="name" type="text" autocomplete="name" required></label>
+            <label>Phone<input name="phone" type="tel" autocomplete="tel" inputmode="tel" pattern="[0-9 +\-]{10,15}" required></label>
+          </div>
+          <label>Company / location<input name="company" type="text" autocomplete="organization"></label>
+          <div class="form__row">
+            <label>Product
+              <select name="product" required>
+                <option value="">Select a product</option>
+                <option>PSCC pole 8 m - 200 kg</option>
+                <option>PSCC pole 9 m - 200 kg</option>
+                <option>PSCC pole 9 m - 300 kg</option>
+                <option>PSCC pole 11 m - 365 kg</option>
+                <option>RCC pole 8 m - 115 kg</option>
+                <option>RCC pole 9 m - 145 kg</option>
+                <option>PSCC spun pole 11 m - 500 kg</option>
+                <option>Concrete blocks 4 inch</option>
+                <option>Concrete blocks 6 inch</option>
+                <option>Concrete blocks 8 inch</option>
+                <option>Other / not sure</option>
+              </select>
+            </label>
+            <label>Quantity<input name="quantity" type="text" inputmode="numeric"></label>
+          </div>
+          <label>Message<textarea name="message" rows="3" placeholder="Delivery location, timeline or any other details"></textarea></label>
+          <button type="submit" class="btn btn--amber">Send enquiry</button>
+          <p class="form__note" hidden>Your email app should now open with the enquiry filled in. Please press send there. If nothing opened, call us on 99020 60783.</p>
+        </form>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container footer__inner">
-      <div>
-        <strong class="footer__name">SLJ Enterprises</strong>
-        <span>GST No. 29BHYPP8305H1ZJ</span>
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <img src="assets/logo-white.svg?v=dev" alt="SLJ Enterprises" width="194" height="64" loading="lazy">
+        <p>Concrete electric poles and concrete blocks, Bengaluru.</p>
+        <p>GST No. 29BHYPP8305H1ZJ</p>
       </div>
-      <div class="footer__right">
-        <span>&copy; <span id="year">2026</span> SLJ Enterprises</span>
-        <span>Powered by <a class="footer__credit" href="https://www.uniqueinfomedia.co.in/" target="_blank" rel="noopener">Unique Infomedia</a></span>
-        <a href="#top">Back to top &uarr;</a>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#guide">Pole Guide</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#units">Our Units</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="footer__contact">
+        <a href="tel:+919902060783">+91 99020 60783</a>
+        <a href="tel:+918310814766">+91 83108 14766</a>
+        <a href="mailto:info@sljenterprises.com">info@sljenterprises.com</a>
       </div>
     </div>
+    <div class="container footer__bottom">
+      <span>&copy; <span id="year">2026</span> SLJ Enterprises</span>
+      <span>Powered by <a class="footer__credit" href="https://www.uniqueinfomedia.co.in/" target="_blank" rel="noopener">Unique Infomedia</a></span>
+      <a href="#top">Back to top &uarr;</a>
+    </div>
   </footer>
+
+  <!-- Quick actions on phones -->
+  <div class="action-bar" aria-label="Quick actions">
+    <a href="tel:+919902060783">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      Call
+    </a>
+    <a href="#contact" class="action-bar__primary">Get a quote</a>
+  </div>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+    <figure>
+      <img alt="">
+      <figcaption></figcaption>
+    </figure>
+    <button type="button" class="lightbox__btn lightbox__close" data-close aria-label="Close">&times;</button>
+    <button type="button" class="lightbox__btn lightbox__prev" data-prev aria-label="Previous photo">&lsaquo;</button>
+    <button type="button" class="lightbox__btn lightbox__next" data-next aria-label="Next photo">&rsaquo;</button>
+  </dialog>
 
   <script src="assets/js/main.js?v=dev" defer></script>
 </body>

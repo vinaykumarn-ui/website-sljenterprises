@@ -1,16 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="SLJ Enterprises">
-  <rect width="64" height="64" rx="14" fill="#0b2545"/>
-  <!-- wires -->
-  <path d="M6 17q13 5 13 5M45 22q13-5 13-5" fill="none" stroke="#5f7fa8" stroke-width="1.2"/>
-  <!-- cross-arm -->
-  <rect x="14" y="21" width="36" height="4" rx="1" fill="#dfe4ea"/>
-  <!-- insulators -->
-  <rect x="16.5" y="14" width="5" height="7" rx="2" fill="#f5a300"/>
-  <rect x="29.5" y="12" width="5" height="9" rx="2" fill="#f5a300"/>
-  <rect x="42.5" y="14" width="5" height="7" rx="2" fill="#f5a300"/>
-  <!-- tapered concrete pole -->
-  <path d="M30 18h4l3.5 34h-11z" fill="#dfe4ea"/>
-  <path d="M32 18h2l3.5 34H32z" fill="#b9c2ce"/>
-  <!-- ground -->
-  <rect x="16" y="52" width="32" height="3" rx="1.5" fill="#f5a300"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -4 76 72" width="64" height="64" role="img" aria-label="SLJ Enterprises">
+  <rect x="-6" y="-4" width="76" height="72" rx="14" fill="#0b2545"/>
+  <g>
+    <rect x="2" y="50" width="19" height="12" rx="1.5" fill="#c9d2dd"/>
+    <rect x="23" y="50" width="19" height="12" rx="1.5" fill="#a9b5c3"/>
+    <rect x="44" y="50" width="18" height="12" rx="1.5" fill="#c9d2dd"/>
+    <rect x="12" y="36" width="19" height="12" rx="1.5" fill="#a9b5c3"/>
+    <rect x="33" y="36" width="19" height="12" rx="1.5" fill="#c9d2dd"/>
+    <path d="M29 6h6l2.5 28h-11z" fill="#ffffff"/>
+    <rect x="16" y="2" width="32" height="5" rx="2" fill="#f5a300"/>
+    <rect x="18.5" y="7" width="3" height="4" rx="1" fill="#f5a300"/>
+    <rect x="42.5" y="7" width="3" height="4" rx="1" fill="#f5a300"/>
+  </g>
 </svg>
