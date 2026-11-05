@@ -65,7 +65,7 @@
       <nav class="nav" id="nav" aria-label="Main">
         <a href="#about">About</a>
         <a href="#products">Products</a>
-        <a href="#guide">Pole Guide</a>
+        <a href="#guide">Guide</a>
         <a href="#gallery">Gallery</a>
         <a href="#units">Our Units</a>
         <a href="#faq">FAQ</a>
@@ -232,29 +232,70 @@
           </li>
         </ul>
 
-        <div class="product-row">
-          <div>
-            <h2>Concrete blocks</h2>
-            <p class="section__intro">Manufactured at our Tavarekere unit since 2015, for contractors, builders and the public.</p>
-            <ul class="sizes">
-              <li><strong>4&Prime;</strong><span>4 inch blocks</span></li>
-              <li><strong>6&Prime;</strong><span>6 inch blocks</span></li>
-              <li><strong>8&Prime;</strong><span>8 inch blocks</span></li>
-            </ul>
-            <a href="#contact" class="btn btn--small product-row__cta">Enquire about blocks</a>
+        <div class="blocks" id="blocks">
+          <div class="section__head">
+            <div>
+              <h2>Concrete blocks</h2>
+              <p class="section__intro">Manufactured at our Tavarekere unit since 2015 for contractors, builders and the public. Three sizes, in hollow and solid types.</p>
+            </div>
+            <div class="blocks__actions">
+              <a href="#contact" class="btn btn--small">Enquire about blocks</a>
+              <a href="https://wa.me/919902060783?text=Hello%20SLJ%20Enterprises%2C%20I%20would%20like%20to%20enquire%20about%20concrete%20blocks." class="btn btn--small btn--wa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+            </div>
           </div>
-          <picture class="product-row__photo">
-            <source srcset="assets/img/blocks-stack-1.webp" type="image/webp">
-            <img src="assets/img/blocks-stack-1.jpg" alt="Stacked concrete blocks" width="780" height="957" loading="lazy">
-          </picture>
+
+          <ul class="block-sizes">
+            <li class="block-card" style="--t: 4">
+              <div class="block-card__viz" aria-hidden="true"><span></span><em>4&Prime;</em></div>
+              <div class="block-card__body">
+                <span class="tag tag--block">Concrete block</span>
+                <strong>4 inch</strong>
+                <span>Typically used for internal partition walls</span>
+              </div>
+            </li>
+            <li class="block-card" style="--t: 6">
+              <div class="block-card__viz" aria-hidden="true"><span></span><em>6&Prime;</em></div>
+              <div class="block-card__body">
+                <span class="tag tag--block">Concrete block</span>
+                <strong>6 inch</strong>
+                <span>Typically used for internal and external walls</span>
+              </div>
+            </li>
+            <li class="block-card" style="--t: 8">
+              <div class="block-card__viz" aria-hidden="true"><span></span><em>8&Prime;</em></div>
+              <div class="block-card__body">
+                <span class="tag tag--block">Concrete block</span>
+                <strong>8 inch</strong>
+                <span>Typically used for external and load-bearing walls</span>
+              </div>
+            </li>
+          </ul>
+
+          <div class="block-types">
+            <article class="block-type">
+              <picture><source srcset="assets/img/blocks-stack-1.webp" type="image/webp"><img src="assets/img/blocks-stack-1.jpg" alt="Hollow concrete blocks with cavities, stacked in the yard" width="780" height="957" loading="lazy"></picture>
+              <div class="block-type__body">
+                <h3>Hollow blocks</h3>
+                <p>Blocks with cavities through them. Lighter to lift and lay, and the air in the cavities helps with heat and sound insulation.</p>
+              </div>
+            </article>
+            <article class="block-type">
+              <picture><source srcset="assets/img/blocks-stack-2.webp" type="image/webp"><img src="assets/img/blocks-stack-2.jpg" alt="Solid concrete blocks stacked in the yard" width="780" height="957" loading="lazy"></picture>
+              <div class="block-type__body">
+                <h3>Solid blocks</h3>
+                <p>Blocks with no cavities. Denser and heavier, for walls that need more strength, such as load-bearing and compound walls.</p>
+              </div>
+            </article>
+          </div>
+          <p class="blocks__note">Typical uses are general guidance. Your engineer or architect should confirm the right block for your wall.</p>
         </div>
       </div>
     </section>
 
-    <!-- Pole guide: general product knowledge -->
+    <!-- Product guide: general product knowledge -->
     <section class="section" id="guide">
       <div class="container">
-        <p class="eyebrow">Pole guide</p>
+        <p class="eyebrow">Product guide</p>
         <h2>Choosing the right pole</h2>
         <p class="section__intro">A quick, general overview of the three pole types we make.</p>
         <div class="guide">
@@ -293,6 +334,39 @@
               <li>Utility &amp; turnkey works</li>
             </ul>
           </div>
+        </div>
+
+        <h2 class="guide__title">Choosing the right block</h2>
+        <p class="section__intro">A quick, general overview of concrete blocks.</p>
+        <div class="guide guide--blocks">
+          <article class="guide__card">
+            <div class="guide__icon guide__icon--block" aria-hidden="true"><svg viewBox="0 0 64 40"><rect x="4" y="8" width="56" height="24" rx="2"/><path class="dim" d="M4 36h56M4 33v6M60 33v6"/></svg></div>
+            <h3>What do 4, 6 and 8 inch mean?</h3>
+            <p>The size is the thickness of the block, which sets how thick the finished wall is. Thicker blocks make stronger, heavier walls.</p>
+            <ul><li>4 inch: thinner internal partitions</li><li>6 inch: general internal and external walls</li><li>8 inch: external and load-bearing walls</li></ul>
+          </article>
+          <article class="guide__card">
+            <div class="guide__icon guide__icon--block" aria-hidden="true"><svg viewBox="0 0 64 40"><rect x="4" y="8" width="56" height="24" rx="2"/><rect class="hole" x="12" y="14" width="14" height="12" rx="1"/><rect class="hole" x="38" y="14" width="14" height="12" rx="1"/></svg></div>
+            <h3>Hollow or solid?</h3>
+            <p>Hollow blocks have cavities, so they weigh less and insulate better. Solid blocks have no cavities, so they are denser and stronger.</p>
+            <ul><li>Hollow: lighter, better insulation</li><li>Solid: denser, more strength</li><li>We make both types</li></ul>
+          </article>
+          <article class="guide__card">
+            <div class="guide__icon guide__icon--block" aria-hidden="true"><svg viewBox="0 0 64 40"><rect x="4" y="4" width="26" height="14" rx="1.5"/><rect x="34" y="4" width="26" height="14" rx="1.5"/><rect x="18" y="22" width="28" height="14" rx="1.5"/></svg></div>
+            <h3>Why concrete blocks?</h3>
+            <p>Concrete blocks are a common walling material for homes, commercial buildings and boundary walls.</p>
+            <ul><li>Good fire resistance</li><li>Good sound insulation</li><li>Strong and cost-effective</li></ul>
+          </article>
+        </div>
+        <div class="uses uses--blocks">
+          <h3>Where concrete blocks are used</h3>
+          <ul class="tags">
+            <li>Load-bearing walls</li>
+            <li>Partition walls</li>
+            <li>Compound &amp; boundary walls</li>
+            <li>Residential buildings</li>
+            <li>Commercial &amp; industrial buildings</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -424,7 +498,11 @@
           </details>
           <details>
             <summary>Do you also make concrete blocks?</summary>
-            <p>Yes. We have made concrete blocks of 4, 6 and 8 inches at our Tavarekere unit since 2015.</p>
+            <p>Yes. We have made concrete blocks of 4, 6 and 8 inches at our Tavarekere unit since 2015, in both hollow and solid types, for contractors, builders and the public.</p>
+          </details>
+          <details>
+            <summary>Which block size should I choose?</summary>
+            <p>As a general guide, 4 inch blocks suit internal partition walls, 6 inch blocks suit general internal and external walls, and 8 inch blocks suit external and load-bearing walls. Your engineer or architect should confirm the right block for your building.</p>
           </details>
           <details>
             <summary>How do I get a quotation?</summary>
@@ -503,7 +581,7 @@
       <nav class="footer__links" aria-label="Footer">
         <a href="#about">About</a>
         <a href="#products">Products</a>
-        <a href="#guide">Pole Guide</a>
+        <a href="#guide">Guide</a>
         <a href="#gallery">Gallery</a>
         <a href="#units">Our Units</a>
         <a href="#faq">FAQ</a>
