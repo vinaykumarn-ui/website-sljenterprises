@@ -20,6 +20,7 @@ jobs:
       VPS_USER: ${{ secrets.VPS_USER }}
       VPS_PORT: ${{ secrets.VPS_PORT || '22' }}
       VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+      VPS_KNOWN_HOSTS: ${{ secrets.VPS_KNOWN_HOSTS }}
       DEPLOY_PATH: /var/www/sljenterprises.com/html
     steps:
       - name: Check that deploy secrets are configured
@@ -41,7 +42,13 @@ jobs:
           mkdir -p ~/.ssh
           printf '%s\n' "$VPS_SSH_KEY" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -p "$VPS_PORT" -H "$VPS_HOST" >> ~/.ssh/known_hosts
+          # Pinned server key (secret VPS_KNOWN_HOSTS). Scanning instead opens several
+          # unauthenticated connections, which fail2ban on the VPS treats as an attack.
+          if [ -n "$VPS_KNOWN_HOSTS" ]; then
+            printf '%s\n' "$VPS_KNOWN_HOSTS" >> ~/.ssh/known_hosts
+          else
+            ssh-keyscan -t ed25519 -p "$VPS_PORT" "$VPS_HOST" >> ~/.ssh/known_hosts
+          fi
 
       - name: Stamp asset URLs with the commit id
         if: steps.check.outputs.ready == 'true'
