@@ -22,7 +22,7 @@ fi
 
 echo "==> Installing nginx, certbot, rsync and firewall"
 apt-get update
-DEBIAN_FRONTEND=noninteractive apt-get install -y nginx certbot python3-certbot-nginx rsync ufw
+DEBIAN_FRONTEND=noninteractive apt-get install -y nginx certbot python3-certbot-nginx rsync ufw fail2ban
 
 echo "==> Creating deploy user"
 id "$DEPLOY_USER" >/dev/null 2>&1 || adduser --disabled-password --gecos "" "$DEPLOY_USER"
@@ -48,6 +48,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 [ -f "/etc/nginx/sites-available/${DOMAIN}" ] || cp "$SCRIPT_DIR/nginx/${DOMAIN}.conf" "/etc/nginx/sites-available/${DOMAIN}"
 install -m 644 "$SCRIPT_DIR/nginx/slje-security-headers.conf" /etc/nginx/snippets/
 install -m 644 "$SCRIPT_DIR/nginx/slje-ratelimit.conf" /etc/nginx/conf.d/
+install -m 644 "$SCRIPT_DIR/nginx/slje-hardening.conf" /etc/nginx/conf.d/
 ln -sf "/etc/nginx/sites-available/${DOMAIN}" "/etc/nginx/sites-enabled/${DOMAIN}"
 rm -f /etc/nginx/sites-enabled/default
 nginx -t
@@ -58,6 +59,18 @@ echo "==> Configuring firewall"
 ufw allow OpenSSH
 ufw allow "Nginx Full"
 ufw --force enable
+
+echo "==> Hardening SSH and enabling fail2ban"
+install -m 644 "$SCRIPT_DIR/hardening/slje-fail2ban.local" /etc/fail2ban/jail.d/slje.local
+systemctl enable --now fail2ban
+systemctl restart fail2ban
+# Only switch to key-only logins when root already has a key, so we never lock ourselves out
+if [ -s /root/.ssh/authorized_keys ]; then
+  install -m 644 "$SCRIPT_DIR/hardening/00-slje-ssh.conf" /etc/ssh/sshd_config.d/00-slje-ssh.conf
+  sshd -t && systemctl reload ssh
+else
+  echo "WARNING: /root/.ssh/authorized_keys is empty; password login left ON. Add a key, then re-run."
+fi
 
 cat <<EOF
 

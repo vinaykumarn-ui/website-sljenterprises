@@ -1,0 +1,17 @@
+# Installed to /etc/fail2ban/jail.d/slje.local
+# Ban an address for 1 hour after 5 failed SSH logins within 10 minutes;
+# repeat offenders get longer bans (up to 1 week).
+[DEFAULT]
+backend = systemd
+bantime = 1h
+findtime = 10m
+maxretry = 5
+bantime.increment = true
+bantime.maxtime = 1w
+
+[sshd]
+enabled = true
+# Ubuntu 24.04 runs SSH as ssh.service, not sshd.service
+journalmatch = _SYSTEMD_UNIT=ssh.service + _COMM=sshd
+# With password logins disabled, bots mostly show up as pre-auth disconnects
+mode = aggressive

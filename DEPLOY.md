@@ -99,3 +99,17 @@ with a copy to prashanths123@gmail.com.
 - Config: `/etc/slje-enquiry.env` (root only). Change `MAIL_TO` / `MAIL_CC` there, then `systemctl restart slje-enquiry`.
 - Logs: `journalctl -u slje-enquiry -n 50`
 - Spam protection: hidden honeypot field, minimum fill time, 5 enquiries/hour per IP (service) and 6/min (nginx).
+
+---
+
+## Server security
+
+- **SSH is key-only.** Passwords are refused for every user; root logs in only with `~/.ssh/slje_admin`
+  (config: `deploy/hardening/00-slje-ssh.conf`). If that key is ever lost, use Hostinger hPanel →
+  VPS → **Browser terminal** to get in and add a new key to `/root/.ssh/authorized_keys`.
+- **fail2ban** bans an IP for 1 hour after 5 failed SSH attempts in 10 minutes, longer for repeat
+  offenders (`deploy/hardening/slje-fail2ban.local`). Check with `fail2ban-client status sshd`;
+  unban with `fail2ban-client set sshd unbanip <ip>`.
+- **nginx** hides its version and sends HSTS (1 year) and other security headers
+  (`deploy/nginx/slje-hardening.conf`, `deploy/nginx/slje-security-headers.conf`).
+- Ubuntu security updates install automatically (unattended-upgrades).
