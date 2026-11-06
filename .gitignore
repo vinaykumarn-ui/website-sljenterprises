@@ -6,3 +6,6 @@ Thumbs.db
 .env
 .claude/
 artefacts/
+info.txt
+*.txt
+!site/robots.txt
