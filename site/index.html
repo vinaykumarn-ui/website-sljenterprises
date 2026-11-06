@@ -13,6 +13,7 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://sljenterprises.com/assets/img/spun-poles-yard.jpg">
   <link rel="icon" href="assets/favicon.svg?v=dev" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Kannada:wght@600&display=swap" rel="stylesheet">
@@ -20,29 +21,65 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "SLJ Enterprises",
-    "url": "https://sljenterprises.com/",
-    "logo": "https://sljenterprises.com/assets/logo.svg",
-    "foundingDate": "2015",
-    "telephone": ["+91-9902060783", "+91-8310814766"],
-    "email": ["info@sljenterprises.com", "prashanths123@gmail.com"],
-    "address": [
+    "@graph": [
       {
-        "@type": "PostalAddress",
-        "streetAddress": "Sy No 127/2, Ajjanahalli, Tavarekere Hobli",
-        "addressLocality": "Bengaluru South",
-        "addressRegion": "Karnataka",
-        "postalCode": "562130",
-        "addressCountry": "IN"
+        "@type": "Organization",
+        "@id": "https://sljenterprises.com/#org",
+        "name": "SLJ Enterprises",
+        "alternateName": ["S.L.J Enterprises", "SLJ Enterprises Bengaluru", "ಎಸ್.ಎಲ್.ಜೆ ಎಂಟರ್‌ಪ್ರೈಸಸ್"],
+        "description": "Manufacturer of PSCC, RCC and PSCC spun electric poles and concrete blocks in Bengaluru. BESCOM approved vendor.",
+        "url": "https://sljenterprises.com/",
+        "logo": "https://sljenterprises.com/assets/logo-512.png",
+        "image": "https://sljenterprises.com/assets/img/spun-poles-yard.jpg",
+        "foundingDate": "2015",
+        "telephone": "+91-9902060783",
+        "email": "info@sljenterprises.com",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+91-9902060783",
+          "contactType": "sales",
+          "areaServed": "IN",
+          "availableLanguage": ["en", "kn"]
+        },
+        "taxID": "29BHYPP8305H1ZJ"
       },
       {
-        "@type": "PostalAddress",
-        "streetAddress": "Plot No 166-B, Avverahalli Industrial Area, 4th Phase KIADB Dabaspet, Sy No 7/4-P, Sompura Hobli, Nelamangala Taluk",
-        "addressLocality": "Bengaluru Rural District",
-        "addressRegion": "Karnataka",
-        "postalCode": "562111",
-        "addressCountry": "IN"
+        "@type": "LocalBusiness",
+        "@id": "https://sljenterprises.com/#dabaspet",
+        "name": "SLJ Enterprises - Electric Poles Unit, Dabaspet",
+        "parentOrganization": { "@id": "https://sljenterprises.com/#org" },
+        "url": "https://sljenterprises.com/",
+        "image": "https://sljenterprises.com/assets/img/poles-curing-tank.jpg",
+        "telephone": "+91-9902060783",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Plot No 166-B, Avverahalli Industrial Area, 4th Phase KIADB Dabaspet, Sy No 7/4-P, Sompura Hobli, Nelamangala Taluk",
+          "addressLocality": "Bengaluru Rural District",
+          "addressRegion": "Karnataka",
+          "postalCode": "562111",
+          "addressCountry": "IN"
+        },
+        "geo": { "@type": "GeoCoordinates", "latitude": 13.196496, "longitude": 77.249687 },
+        "hasMap": "https://www.google.com/maps?q=13.19649600982666,77.24968719482422"
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://sljenterprises.com/#tavarekere",
+        "name": "SLJ Enterprises - Concrete Blocks Unit, Tavarekere",
+        "parentOrganization": { "@id": "https://sljenterprises.com/#org" },
+        "url": "https://sljenterprises.com/",
+        "image": "https://sljenterprises.com/assets/img/blocks-stack-1.jpg",
+        "telephone": "+91-9902060783",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Sy No 127/2, Ajjanahalli, Tavarekere Hobli",
+          "addressLocality": "Bengaluru South",
+          "addressRegion": "Karnataka",
+          "postalCode": "562130",
+          "addressCountry": "IN"
+        },
+        "geo": { "@type": "GeoCoordinates", "latitude": 12.934910, "longitude": 77.373375 },
+        "hasMap": "https://www.google.com/maps?q=12.93490982055664,77.37337493896484"
       }
     ]
   }
@@ -134,7 +171,7 @@
             </figure>
             <span class="journey__arrow" aria-hidden="true">&rarr;</span>
             <figure>
-              <picture><source srcset="assets/img/poles-square-stack.webp" type="image/webp"><img src="assets/img/poles-square-stack.jpg" alt="Concrete electric poles" width="336" height="175" loading="lazy"></picture>
+              <picture><source srcset="assets/img/poles-curing-tank.webp" type="image/webp"><img src="assets/img/poles-curing-tank.jpg" alt="Concrete electric poles curing in water" width="590" height="1280" loading="lazy"></picture>
               <figcaption>Electric poles &middot; 2024</figcaption>
             </figure>
           </div>
@@ -407,6 +444,10 @@
             <picture><source srcset="assets/img/spun-poles-yard.webp" type="image/webp"><img src="assets/img/spun-poles-yard.jpg" alt="Stack of concrete spun poles in the yard" width="960" height="512" loading="lazy"></picture>
             <figcaption>Spun poles in the yard</figcaption>
           </figure>
+          <figure class="gallery__tall">
+            <picture><source srcset="assets/img/poles-curing-tank.webp" type="image/webp"><img src="assets/img/poles-curing-tank.jpg" alt="Rectangular concrete electric poles stacked in a water-filled curing tank" width="590" height="1280" loading="lazy"></picture>
+            <figcaption>Concrete poles curing in water</figcaption>
+          </figure>
           <figure>
             <picture><source srcset="assets/img/casting-yard.webp" type="image/webp"><img src="assets/img/casting-yard.jpg" alt="Pole casting yard with gantry" width="336" height="175" loading="lazy"></picture>
             <figcaption>Pole casting yard</figcaption>
@@ -435,11 +476,11 @@
             <picture><source srcset="assets/img/blocks-wall.webp" type="image/webp"><img src="assets/img/blocks-wall.jpg" alt="Long stack of concrete blocks" width="780" height="957" loading="lazy"></picture>
             <figcaption>Concrete blocks</figcaption>
           </figure>
-          <figure>
+          <figure class="gallery__wide">
             <picture><source srcset="assets/img/blocks-stack-2.webp" type="image/webp"><img src="assets/img/blocks-stack-2.jpg" alt="Concrete blocks stacked in the yard" width="780" height="957" loading="lazy"></picture>
             <figcaption>Block stockyard</figcaption>
           </figure>
-          <figure>
+          <figure class="gallery__wide">
             <picture><source srcset="assets/img/blocks-stack-3.webp" type="image/webp"><img src="assets/img/blocks-stack-3.jpg" alt="Tall stack of concrete blocks" width="780" height="957" loading="lazy"></picture>
             <figcaption>Concrete blocks</figcaption>
           </figure>

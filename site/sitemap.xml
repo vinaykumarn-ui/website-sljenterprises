@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://sljenterprises.com/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <image:image><image:loc>https://sljenterprises.com/assets/img/spun-poles-yard.jpg</image:loc></image:image>
+    <image:image><image:loc>https://sljenterprises.com/assets/img/poles-curing-tank.jpg</image:loc></image:image>
+    <image:image><image:loc>https://sljenterprises.com/assets/img/casting-yard.jpg</image:loc></image:image>
+    <image:image><image:loc>https://sljenterprises.com/assets/img/poles-truck-delivery.jpg</image:loc></image:image>
+    <image:image><image:loc>https://sljenterprises.com/assets/img/blocks-stack-1.jpg</image:loc></image:image>
+    <image:image><image:loc>https://sljenterprises.com/assets/img/blocks-stack-2.jpg</image:loc></image:image>
   </url>
 </urlset>
