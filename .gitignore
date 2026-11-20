@@ -9,3 +9,4 @@ artefacts/
 info.txt
 *.txt
 !site/robots.txt
+feedbacks/

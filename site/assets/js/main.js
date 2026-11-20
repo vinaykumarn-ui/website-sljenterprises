@@ -145,6 +145,125 @@ if (lightbox) {
   });
 }
 
+// Document viewer: pole drawings, Bureau Veritas test report, CESC approval.
+// Test figures are from the Bureau Veritas test sheets (ref. IND.B.7.25.306DT);
+// `page` is the page of that PDF with the pole's test sheet.
+const BV_REPORT = 'docs/bureau-veritas-test-report.pdf';
+const POLES = {
+  'pscc-8-200': { name: 'PSCC pole', size: '8 m · 200 kg', drawing: 'drawing-pscc-8m-200kg', page: 11, sr: '200004',
+    test: ['500 kg (2.5 × working load)', '350 kg', '400 kg', '53.1 cm', '4.3 cm'] },
+  'pscc-9-200': { name: 'PSCC pole', size: '9 m · 200 kg', drawing: 'drawing-pscc-9m-200kg', page: 13, sr: '200006',
+    test: ['500 kg (2.5 × working load)', '350 kg', '400 kg', '58.7 cm', '4.8 cm'] },
+  'pscc-9-300': { name: 'PSCC pole', size: '9 m · 300 kg', drawing: 'drawing-pscc-9m-300kg', page: 15, sr: '200005',
+    test: ['600 kg (2.0 × working load)', '360 kg', '420 kg', '48.7 cm', '4.6 cm'] },
+  'pscc-11-365': { name: 'PSCC pole', size: '11 m · 365 kg', drawing: 'drawing-pscc-11m-365kg', page: 19, sr: '200010',
+    test: ['913 kg (2.5 × working load)', '547 kg', '639 kg', '54.8 cm', '4.8 cm'] },
+  'rcc-8-115': { name: 'RCC pole', size: '8 m · 115 kg', drawing: 'drawing-rcc-8m-115kg', page: 7, sr: '200103',
+    test: ['288 kg (2.5 × working load)', '173 kg', '201 kg', '49.4 cm', '4.5 cm'] },
+  'rcc-9-145': { name: 'RCC pole', size: '9 m · 145 kg', drawing: 'drawing-rcc-9m-145kg', page: 9, sr: '200105',
+    test: ['363 kg (2.5 × working load)', '254 kg', '290 kg', '52.9 cm', '4.8 cm'] },
+  'spun-11-500': { name: 'PSCC spun pole', size: '11 m · 500 kg', drawing: 'drawing-spun-11m-500kg', page: 17, sr: '200120',
+    test: ['1000 kg (2.0 × working load)', '600 kg', '700 kg', '48.7 cm', '4.7 cm'] },
+};
+const DOCS = {
+  bv: { kicker: 'Test report', title: 'Bureau Veritas transverse strength test', file: BV_REPORT, preview: 'bureau-veritas-test-report',
+    info: [['Tested by', 'Bureau Veritas (India) Pvt. Ltd.'], ['Date of test', '22.04.2025'], ['Reference', 'IND.B.7.25.306DT'],
+      ['Poles', 'RCC 8 m, 9 m · PSCC 8 m, 9 m, 11 m · PSC spun 11 m'], ['Standards', 'IS 785, IS 1678, IS 2905'],
+      ['Result', 'Performed satisfactorily; conforms to BESCOM, GESCOM, MESCOM, CESC, HESCOM and KPTCL specifications']] },
+  cesc: { kicker: 'Vendor approval', title: 'CESC Mysore vendor approval', file: 'docs/cesc-vendor-approval-2026.pdf', preview: 'cesc-vendor-approval-2026',
+    info: [['Issued by', 'Chamundeshwari Electricity Supply Corporation Ltd., Mysuru'], ['Date', '27.03.2026'],
+      ['Valid up to', 'March 2028'], ['Approved', 'All 7 pole types'],
+      ['For', 'Electrification of layouts, turnkey projects, buildings and HT installations in the CESC area']] },
+};
+
+const docview = document.getElementById('docview');
+if (docview) {
+  // Phones and browsers without a built-in PDF viewer get a preview image that opens the PDF instead
+  const inlinePdf = navigator.pdfViewerEnabled !== false && !window.matchMedia('(max-width: 860px)').matches;
+  const frame = docview.querySelector('iframe');
+  const preview = docview.querySelector('.docview__preview');
+  const tabs = docview.querySelector('.docview__tabs');
+  const info = docview.querySelector('.docview__info');
+  const openLink = docview.querySelector('[data-open]');
+  const downloadLink = docview.querySelector('[data-download]');
+  let current = null;
+
+  const infoList = (rows) =>
+    '<dl>' + rows.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('') + '</dl>';
+
+  const showFile = (file, page, previewName) => {
+    const url = page ? `${file}#page=${page}` : file;
+    openLink.href = url;
+    downloadLink.href = file;
+    preview.href = url;
+    preview.querySelector('img').src = `assets/img/docs/${previewName}.jpg`;
+    frame.hidden = !inlinePdf;
+    preview.hidden = inlinePdf;
+    if (inlinePdf) frame.src = url;
+  };
+
+  const showPoleTab = (tab) => {
+    const pole = POLES[current];
+    tabs.querySelectorAll('button').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.tab === tab)));
+    if (tab === 'report') showFile(BV_REPORT, pole.page, 'bureau-veritas-test-report');
+    else showFile(`docs/${pole.drawing}.pdf`, null, pole.drawing);
+  };
+
+  const open = (id, tab) => {
+    current = id;
+    const pole = POLES[id];
+    if (pole) {
+      docview.querySelector('.docview__kicker').textContent = pole.name;
+      docview.querySelector('h3').textContent = `${pole.name} ${pole.size}`;
+      tabs.hidden = false;
+      const [load, noCrack, firstCrack, deflection, residual] = pole.test;
+      info.innerHTML =
+        '<h4>Bureau Veritas test, 22.04.2025</h4>' +
+        infoList([['Test load', load], ['No cracks up to', noCrack], ['First crack at', firstCrack],
+          ['Deflection at test load', deflection], ['Residual deflection', `${residual}, all cracks closed`]]) +
+        '<h4>Approvals</h4>' +
+        infoList([['BESCOM', 'Approved vendor, valid to 24.04.2030'], ['CESC', `Approved vendor, valid to March 2028 (SR ${pole.sr})`]]) +
+        '<a class="btn btn--small btn--amber" href="#contact" data-close>Enquire about this pole</a>';
+      showPoleTab(tab || 'drawing');
+    } else {
+      const doc = DOCS[id];
+      docview.querySelector('.docview__kicker').textContent = doc.kicker;
+      docview.querySelector('h3').textContent = doc.title;
+      tabs.hidden = true;
+      info.innerHTML = infoList(doc.info);
+      showFile(doc.file, null, doc.preview);
+    }
+    if (!docview.open) docview.showModal();
+  };
+
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('[data-doc]');
+    if (trigger && !trigger.closest('#docview')) open(trigger.dataset.doc, trigger.dataset.tab);
+  });
+  // Pole cards act as buttons
+  document.querySelectorAll('.pole-card[data-doc]').forEach((card) => {
+    card.tabIndex = 0;
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', `View drawing and test results: ${POLES[card.dataset.doc].name} ${POLES[card.dataset.doc].size}`);
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        open(card.dataset.doc);
+      }
+    });
+  });
+  tabs.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-tab]');
+    if (b) showPoleTab(b.dataset.tab);
+  });
+  docview.addEventListener('click', (e) => {
+    if (e.target === docview || e.target.closest('[data-close]')) docview.close();
+  });
+  docview.addEventListener('close', () => {
+    frame.removeAttribute('src');
+  });
+}
+
 // Enquiry form: sends to /api/enquiry on our server. If the server cannot be
 // reached it falls back to opening the visitor's email app, pre-filled.
 const form = document.getElementById('enquiry-form');

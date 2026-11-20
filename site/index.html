@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://sljenterprises.com/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://sljenterprises.com/assets/img/spun-poles-yard.jpg">
-  <link rel="icon" href="assets/favicon.svg?v=dev" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png?v=dev" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -94,7 +94,7 @@
   <header class="header">
     <div class="container header__inner">
       <a class="brand" href="#top" aria-label="SLJ Enterprises, back to top">
-        <img src="assets/logo.svg?v=dev" alt="SLJ Enterprises" width="194" height="64">
+        <picture><source srcset="assets/logo.webp?v=dev" type="image/webp"><img src="assets/logo.png?v=dev" alt="SLJ Enterprises - Concrete Products" width="1194" height="744"></picture>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
         <span></span><span></span><span></span>
@@ -102,6 +102,7 @@
       <nav class="nav" id="nav" aria-label="Main">
         <a href="#about">About</a>
         <a href="#products">Products</a>
+        <a href="#quality">Quality</a>
         <a href="#guide">Guide</a>
         <a href="#gallery">Gallery</a>
         <a href="#units">Our Units</a>
@@ -116,7 +117,8 @@
     <section class="hero">
       <div class="container hero__grid">
         <div class="hero__text">
-          <span class="chip"><span class="chip__dot" aria-hidden="true"></span>BESCOM Approved Vendor</span>
+          <picture class="hero__logo"><source srcset="assets/logo.webp?v=dev" type="image/webp"><img src="assets/logo.png?v=dev" alt="SLJ Enterprises - Concrete Products" width="1194" height="744" fetchpriority="high"></picture>
+          <span class="chip"><span class="chip__dot" aria-hidden="true"></span>BESCOM &amp; CESC Approved Vendor</span>
           <h1>Concrete electric poles &amp; blocks, <span class="accent">made in Bengaluru</span></h1>
           <p class="kn" lang="kn">ಎಸ್.ಎಲ್.ಜೆ ಎಂಟರ್‌ಪ್ರೈಸಸ್</p>
           <p class="lead">PSCC, RCC and PSCC spun electric poles from our Dabaspet unit, and concrete blocks from our Tavarekere unit.</p>
@@ -131,16 +133,18 @@
         </div>
         <div class="hero__media">
           <picture class="hero__main">
-            <source srcset="assets/img/spun-poles-yard.webp" type="image/webp">
-            <img src="assets/img/spun-poles-yard.jpg" alt="Stack of concrete spun poles in the SLJ Enterprises yard" width="960" height="512" fetchpriority="high">
+            <source srcset="assets/img/pole-yard-gantry.webp" type="image/webp">
+            <img src="assets/img/pole-yard-gantry.jpg" alt="Concrete poles stacked under the gantry cranes in the SLJ Enterprises pole yard" width="1280" height="960" fetchpriority="high">
           </picture>
           <picture class="hero__inset">
-            <source srcset="assets/img/casting-yard.webp" type="image/webp">
-            <img src="assets/img/casting-yard.jpg" alt="Pole casting yard with gantry" width="336" height="175">
+            <source srcset="assets/img/spun-poles-yard.webp" type="image/webp">
+            <img src="assets/img/spun-poles-yard.jpg" alt="Stack of concrete spun poles in the yard" width="960" height="512">
           </picture>
           <div class="hero__badge">
+            <span>BESCOM approval</span>
             <strong>Valid to 24.04.2030</strong>
-            <span>BESCOM vendor approval</span>
+            <span>CESC approval</span>
+            <strong>Valid to March 2028</strong>
           </div>
         </div>
       </div>
@@ -163,7 +167,7 @@
           <p class="eyebrow">About us</p>
           <h2>From concrete blocks to electric poles</h2>
           <p>SLJ Enterprises was started in 2015 with the help of family and friends. We began by manufacturing concrete blocks of 4, 6 and 8 inches and have served many contractors, builders and the public.</p>
-          <p>In December 2024 we started pole manufacturing at Dabaspet. We have supplied more than 10,000 poles to date and have a production capacity of 60 poles per day.</p>
+          <p>In December 2024 we started pole manufacturing at Dabaspet. We have supplied more than 10,000 poles till date and have a production capacity of 60 poles per day.</p>
           <div class="journey" aria-label="From concrete blocks to electric poles">
             <figure>
               <picture><source srcset="assets/img/blocks-stack-1.webp" type="image/webp"><img src="assets/img/blocks-stack-1.jpg" alt="Concrete blocks" width="780" height="957" loading="lazy"></picture>
@@ -178,6 +182,7 @@
           <ul class="timeline">
             <li><strong>2015</strong><span>Concrete block production begins</span></li>
             <li><strong>Dec 2024</strong><span>Pole manufacturing starts at Dabaspet</span></li>
+            <li><strong>Mar 2026</strong><span>CESC vendor approval renewed</span></li>
             <li><strong>Jul 2026</strong><span>BESCOM vendor approval renewed</span></li>
           </ul>
         </div>
@@ -188,7 +193,7 @@
             </div>
             <div>
               <h3>Approved vendor</h3>
-              <p>For BESCOM area electrification works</p>
+              <p>For BESCOM and CESC area electrification works</p>
             </div>
           </div>
 
@@ -200,7 +205,8 @@
             </li>
             <li>
               <strong>CESC Mysore</strong>
-              <span>Vendor licence</span>
+              <span>All 7 pole types approved &middot; <button type="button" class="link-btn" data-doc="cesc">View approval</button></span>
+              <em>Valid to March 2028</em>
             </li>
           </ul>
 
@@ -228,7 +234,7 @@
           <div>
             <p class="eyebrow">Products</p>
             <h2>Electric poles</h2>
-            <p class="section__intro">Manufactured at our Dabaspet unit. All seven are on our BESCOM approved list.</p>
+            <p class="section__intro">Manufactured at our Dabaspet unit. All seven are approved by BESCOM and CESC, and type-tested by Bureau Veritas. <strong>Tap a pole to view its drawing and test results.</strong></p>
           </div>
           <div class="filter" role="group" aria-label="Filter poles by type">
             <button type="button" data-filter="all" aria-pressed="true">All</button>
@@ -239,33 +245,33 @@
         </div>
 
         <ul class="poles">
-          <li class="pole-card" data-type="pscc" style="--len: 8">
+          <li class="pole-card" data-doc="pscc-8-200" data-type="pscc" style="--len: 8">
             <div class="pole-card__viz" aria-hidden="true"><span></span></div>
-            <div class="pole-card__body"><span class="tag">PSCC pole</span><strong>8 m</strong><span>200 kg working load</span></div>
+            <div class="pole-card__body"><span class="tag">PSCC pole</span><strong>8 m</strong><span>200 kg working load</span><span class="pole-card__more">Drawing &amp; test results &rarr;</span></div>
           </li>
-          <li class="pole-card" data-type="pscc" style="--len: 9">
+          <li class="pole-card" data-doc="pscc-9-200" data-type="pscc" style="--len: 9">
             <div class="pole-card__viz" aria-hidden="true"><span></span></div>
-            <div class="pole-card__body"><span class="tag">PSCC pole</span><strong>9 m</strong><span>200 kg working load</span></div>
+            <div class="pole-card__body"><span class="tag">PSCC pole</span><strong>9 m</strong><span>200 kg working load</span><span class="pole-card__more">Drawing &amp; test results &rarr;</span></div>
           </li>
-          <li class="pole-card" data-type="pscc" style="--len: 9">
+          <li class="pole-card" data-doc="pscc-9-300" data-type="pscc" style="--len: 9">
             <div class="pole-card__viz" aria-hidden="true"><span></span></div>
-            <div class="pole-card__body"><span class="tag">PSCC pole</span><strong>9 m</strong><span>300 kg working load</span></div>
+            <div class="pole-card__body"><span class="tag">PSCC pole</span><strong>9 m</strong><span>300 kg working load</span><span class="pole-card__more">Drawing &amp; test results &rarr;</span></div>
           </li>
-          <li class="pole-card" data-type="pscc" style="--len: 11">
+          <li class="pole-card" data-doc="pscc-11-365" data-type="pscc" style="--len: 11">
             <div class="pole-card__viz" aria-hidden="true"><span></span></div>
-            <div class="pole-card__body"><span class="tag">PSCC pole</span><strong>11 m</strong><span>365 kg working load</span></div>
+            <div class="pole-card__body"><span class="tag">PSCC pole</span><strong>11 m</strong><span>365 kg working load</span><span class="pole-card__more">Drawing &amp; test results &rarr;</span></div>
           </li>
-          <li class="pole-card" data-type="rcc" style="--len: 8">
+          <li class="pole-card" data-doc="rcc-8-115" data-type="rcc" style="--len: 8">
             <div class="pole-card__viz" aria-hidden="true"><span></span></div>
-            <div class="pole-card__body"><span class="tag tag--rcc">RCC pole</span><strong>8 m</strong><span>115 kg working load</span></div>
+            <div class="pole-card__body"><span class="tag tag--rcc">RCC pole</span><strong>8 m</strong><span>115 kg working load</span><span class="pole-card__more">Drawing &amp; test results &rarr;</span></div>
           </li>
-          <li class="pole-card" data-type="rcc" style="--len: 9">
+          <li class="pole-card" data-doc="rcc-9-145" data-type="rcc" style="--len: 9">
             <div class="pole-card__viz" aria-hidden="true"><span></span></div>
-            <div class="pole-card__body"><span class="tag tag--rcc">RCC pole</span><strong>9 m</strong><span>145 kg working load</span></div>
+            <div class="pole-card__body"><span class="tag tag--rcc">RCC pole</span><strong>9 m</strong><span>145 kg working load</span><span class="pole-card__more">Drawing &amp; test results &rarr;</span></div>
           </li>
-          <li class="pole-card pole-card--spun" data-type="spun" style="--len: 11">
+          <li class="pole-card pole-card--spun" data-doc="spun-11-500" data-type="spun" style="--len: 11">
             <div class="pole-card__viz" aria-hidden="true"><span></span></div>
-            <div class="pole-card__body"><span class="tag tag--spun">PSCC spun pole</span><strong>11 m</strong><span>500 kg working load</span></div>
+            <div class="pole-card__body"><span class="tag tag--spun">PSCC spun pole</span><strong>11 m</strong><span>500 kg working load</span><span class="pole-card__more">Drawing &amp; test results &rarr;</span></div>
           </li>
         </ul>
 
@@ -325,6 +331,60 @@
             </article>
           </div>
           <p class="blocks__note">Typical uses are general guidance. Your engineer or architect should confirm the right block for your wall.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quality and documents -->
+    <section class="section" id="quality">
+      <div class="container">
+        <p class="eyebrow">Quality &amp; documents</p>
+        <h2>Tested, approved and documented</h2>
+        <p class="section__intro">Original documents from Bureau Veritas, CESC and our pole drawings. Tap any document to view it.</p>
+        <div class="docs">
+          <article class="doc-card">
+            <button type="button" class="doc-card__preview" data-doc="bv" aria-label="View the Bureau Veritas test report">
+              <picture><source srcset="assets/img/docs/bureau-veritas-test-report.webp" type="image/webp"><img src="assets/img/docs/bureau-veritas-test-report.jpg" alt="" width="339" height="480" loading="lazy"></picture>
+            </button>
+            <div class="doc-card__body">
+              <span class="tag">Test report</span>
+              <h3>Bureau Veritas transverse strength test</h3>
+              <p class="doc-card__meta">Tested 22.04.2025 &middot; Ref. IND.B.7.25.306DT</p>
+              <p>Transverse strength tests by Bureau Veritas (India) Pvt. Ltd. on all seven pole types (RCC 8 m and 9 m, PSCC 8 m, 9 m and 11 m, PSC spun 11 m) as per IS 785, IS 1678 and IS 2905. All poles performed satisfactorily and conform to BESCOM, GESCOM, MESCOM, CESC, HESCOM and KPTCL specifications.</p>
+              <button type="button" class="btn btn--small" data-doc="bv">View test report</button>
+            </div>
+          </article>
+          <article class="doc-card">
+            <button type="button" class="doc-card__preview" data-doc="cesc" aria-label="View the CESC vendor approval">
+              <picture><source srcset="assets/img/docs/cesc-vendor-approval-2026.webp" type="image/webp"><img src="assets/img/docs/cesc-vendor-approval-2026.jpg" alt="" width="339" height="480" loading="lazy"></picture>
+            </button>
+            <div class="doc-card__body">
+              <span class="tag tag--block">Vendor approval</span>
+              <h3>CESC Mysore vendor approval</h3>
+              <p class="doc-card__meta">Official Memorandum dated 27.03.2026 &middot; valid up to March 2028</p>
+              <p>Chamundeshwari Electricity Supply Corporation renewed SLJ Enterprises as an approved vendor for the supply of all seven pole types, for electrification of layouts, turnkey projects, buildings and HT installations in the CESC area.</p>
+              <button type="button" class="btn btn--small" data-doc="cesc">View approval</button>
+            </div>
+          </article>
+          <article class="doc-card doc-card--drawings">
+            <button type="button" class="doc-card__preview" data-doc="pscc-9-300" data-tab="drawing" aria-label="View pole drawings">
+              <picture><source srcset="assets/img/docs/drawing-pscc-9m-300kg.webp" type="image/webp"><img src="assets/img/docs/drawing-pscc-9m-300kg.jpg" alt="" width="339" height="480" loading="lazy"></picture>
+            </button>
+            <div class="doc-card__body">
+              <span class="tag tag--spun">Drawings</span>
+              <h3>Pole reinforcement drawings</h3>
+              <p class="doc-card__meta">7 drawings &middot; one for each pole type</p>
+              <ul class="doc-chips">
+              <li><button type="button" data-doc="pscc-8-200" data-tab="drawing">PSCC 8 m &middot; 200 kg</button></li>
+              <li><button type="button" data-doc="pscc-9-200" data-tab="drawing">PSCC 9 m &middot; 200 kg</button></li>
+              <li><button type="button" data-doc="pscc-9-300" data-tab="drawing">PSCC 9 m &middot; 300 kg</button></li>
+              <li><button type="button" data-doc="pscc-11-365" data-tab="drawing">PSCC 11 m &middot; 365 kg</button></li>
+              <li><button type="button" data-doc="rcc-8-115" data-tab="drawing">RCC 8 m &middot; 115 kg</button></li>
+              <li><button type="button" data-doc="rcc-9-145" data-tab="drawing">RCC 9 m &middot; 145 kg</button></li>
+              <li><button type="button" data-doc="spun-11-500" data-tab="drawing">PSCC spun 11 m &middot; 500 kg</button></li>
+              </ul>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -441,20 +501,16 @@
         <p class="section__intro">Tap a photo to view it larger.</p>
         <div class="gallery">
           <figure class="gallery__wide">
+            <picture><source srcset="assets/img/pole-yard-gantry.webp" type="image/webp"><img src="assets/img/pole-yard-gantry.jpg" alt="Concrete poles stacked under the gantry cranes in the pole yard" width="1280" height="960" loading="lazy"></picture>
+            <figcaption>Pole yard with gantry cranes</figcaption>
+          </figure>
+          <figure class="gallery__wide">
             <picture><source srcset="assets/img/spun-poles-yard.webp" type="image/webp"><img src="assets/img/spun-poles-yard.jpg" alt="Stack of concrete spun poles in the yard" width="960" height="512" loading="lazy"></picture>
             <figcaption>Spun poles in the yard</figcaption>
           </figure>
           <figure class="gallery__tall">
             <picture><source srcset="assets/img/poles-curing-tank.webp" type="image/webp"><img src="assets/img/poles-curing-tank.jpg" alt="Rectangular concrete electric poles stacked in a water-filled curing tank" width="590" height="1280" loading="lazy"></picture>
             <figcaption>Concrete poles curing in water</figcaption>
-          </figure>
-          <figure>
-            <picture><source srcset="assets/img/casting-yard.webp" type="image/webp"><img src="assets/img/casting-yard.jpg" alt="Pole casting yard with gantry" width="336" height="175" loading="lazy"></picture>
-            <figcaption>Pole casting yard</figcaption>
-          </figure>
-          <figure>
-            <picture><source srcset="assets/img/poles-square-stack.webp" type="image/webp"><img src="assets/img/poles-square-stack.jpg" alt="Stacked concrete electric poles" width="336" height="175" loading="lazy"></picture>
-            <figcaption>Concrete electric poles</figcaption>
           </figure>
           <figure>
             <picture><source srcset="assets/img/spun-poles-closeup.webp" type="image/webp"><img src="assets/img/spun-poles-closeup.jpg" alt="Concrete spun poles" width="336" height="175" loading="lazy"></picture>
@@ -531,11 +587,19 @@
           </details>
           <details>
             <summary>Are you an approved vendor for BESCOM?</summary>
-            <p>Yes. SLJ Enterprises is an approved vendor to BESCOM for all seven poles above. The approval was renewed in July 2026 and is valid up to 24.04.2030, subject to revalidation. We also hold a vendor licence from CESC Mysore.</p>
+            <p>Yes. SLJ Enterprises is an approved vendor to BESCOM for all seven poles above. The approval was renewed in July 2026 and is valid up to 24.04.2030, subject to revalidation.</p>
+          </details>
+          <details>
+            <summary>Are you an approved vendor for CESC Mysore?</summary>
+            <p>Yes. CESC renewed our vendor approval for all seven pole types by Official Memorandum dated 27.03.2026, valid up to March 2028. <button type="button" class="link-btn" data-doc="cesc">View the approval</button>.</p>
+          </details>
+          <details>
+            <summary>Are your poles tested?</summary>
+            <p>Yes. Bureau Veritas carried out transverse strength tests on all seven pole types on 22.04.2025. All performed satisfactorily and conform to BESCOM, GESCOM, MESCOM, CESC, HESCOM and KPTCL specifications. <button type="button" class="link-btn" data-doc="bv">View the test report</button>.</p>
           </details>
           <details>
             <summary>How many poles can you produce?</summary>
-            <p>Our production capacity is 60 poles per day, and we have supplied more than 10,000 poles to date.</p>
+            <p>Our production capacity is 60 poles per day, and we have supplied more than 10,000 poles till date.</p>
           </details>
           <details>
             <summary>Do you also make concrete blocks?</summary>
@@ -615,13 +679,14 @@
   <footer class="footer">
     <div class="container footer__grid">
       <div class="footer__brand">
-        <img src="assets/logo-white.svg?v=dev" alt="SLJ Enterprises" width="194" height="64" loading="lazy">
+        <span class="footer__logo"><picture><source srcset="assets/logo.webp?v=dev" type="image/webp"><img src="assets/logo.png?v=dev" alt="SLJ Enterprises - Concrete Products" width="1194" height="744" loading="lazy"></picture></span>
         <p>Concrete electric poles and concrete blocks, Bengaluru.</p>
         <p>GST No. 29BHYPP8305H1ZJ</p>
       </div>
       <nav class="footer__links" aria-label="Footer">
         <a href="#about">About</a>
         <a href="#products">Products</a>
+        <a href="#quality">Quality &amp; documents</a>
         <a href="#guide">Guide</a>
         <a href="#gallery">Gallery</a>
         <a href="#units">Our Units</a>
@@ -653,6 +718,31 @@
 
   <!-- Floating WhatsApp button (desktop) -->
   <a class="wa-float" href="https://wa.me/919902060783?text=Hello%20SLJ%20Enterprises%2C%20I%20would%20like%20to%20enquire%20about%20your%20products." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg><span>Chat on WhatsApp</span></a>
+
+  <dialog class="docview" id="docview" aria-labelledby="docview-title">
+    <div class="docview__head">
+      <div>
+        <p class="docview__kicker"></p>
+        <h3 id="docview-title"></h3>
+      </div>
+      <button type="button" class="docview__close" data-close aria-label="Close">&times;</button>
+    </div>
+    <div class="docview__tabs" role="tablist" hidden>
+      <button type="button" role="tab" data-tab="drawing">Drawing</button>
+      <button type="button" role="tab" data-tab="report">Test report</button>
+    </div>
+    <div class="docview__body">
+      <aside class="docview__info"></aside>
+      <div class="docview__frame">
+        <iframe title="Document viewer"></iframe>
+        <a class="docview__preview" target="_blank" rel="noopener"><img alt=""><span>Tap to open the PDF</span></a>
+      </div>
+    </div>
+    <div class="docview__foot">
+      <a class="btn btn--small" data-open target="_blank" rel="noopener">Open PDF in new tab</a>
+      <a class="btn btn--small btn--ghost" data-download download>Download</a>
+    </div>
+  </dialog>
 
   <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
     <figure>
