@@ -52,7 +52,7 @@ address { font-style: normal; }
 .skip-link:focus { left: 0.5rem; }
 
 /* Blessing line at the very top */
-.blessing { margin: 0; padding: 0.4rem 1rem; text-align: center; font-family: "Noto Sans Kannada", sans-serif; font-weight: 600; font-size: 1.15rem; color: var(--navy); background: linear-gradient(90deg, var(--amber-light), #fff 50%, var(--amber-light)); border-bottom: 1px solid #f3e2b8; }
+.blessing { margin: 0; padding: 0.25rem 1rem; text-align: center; font-family: "Noto Sans Kannada", sans-serif; font-weight: 600; font-size: 0.85rem; color: var(--navy); background: linear-gradient(90deg, var(--amber-light), #fff 50%, var(--amber-light)); border-bottom: 1px solid #f3e2b8; }
 
 .eyebrow {
   font-size: 0.8rem;
