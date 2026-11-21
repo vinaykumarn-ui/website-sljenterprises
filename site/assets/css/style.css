@@ -52,7 +52,9 @@ address { font-style: normal; }
 .skip-link:focus { left: 0.5rem; }
 
 /* Blessing line at the very top */
-.blessing { margin: 0; padding: 0.25rem 1rem; text-align: center; font-family: "Noto Sans Kannada", sans-serif; font-weight: 600; font-size: 0.85rem; color: var(--navy); background: linear-gradient(90deg, var(--amber-light), #fff 50%, var(--amber-light)); border-bottom: 1px solid #f3e2b8; }
+.blessing { display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin: 0; padding: 0.25rem 1rem; font-family: "Noto Sans Kannada", sans-serif; font-weight: 600; font-size: 0.85rem; color: var(--navy); background: linear-gradient(90deg, var(--amber-light), #fff 50%, var(--amber-light)); border-bottom: 1px solid #f3e2b8; }
+.blessing::before, .blessing::after { content: ""; flex: none; width: 6rem; height: 0.75rem; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 12'%3E%3Cdefs%3E%3ClinearGradient id='g'%3E%3Cstop offset='0' stop-color='%23c27f00' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23c27f00'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='0' y='5.5' width='72' height='1' fill='url(%23g)'/%3E%3Ccircle cx='78' cy='6' r='1.6' fill='%23c27f00'/%3E%3Cpath d='M89 1.5 93.5 6 89 10.5 84.5 6z' fill='%23f5a300'/%3E%3C/svg%3E") center / contain no-repeat; }
+.blessing::after { transform: scaleX(-1); }
 
 .eyebrow {
   font-size: 0.8rem;
@@ -675,6 +677,7 @@ a.contact__item:hover { border-color: var(--amber); background: rgba(245, 163, 0
 }
 
 @media (max-width: 640px) {
+  .blessing::before, .blessing::after { width: 3.25rem; }
   .stats__grid { grid-template-columns: repeat(2, 1fr); row-gap: 1.5rem; }
   .stat:nth-child(3) { border-left: 0; }
   .timeline { grid-template-columns: 1fr; gap: 1.1rem; }
