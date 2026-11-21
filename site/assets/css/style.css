@@ -20,7 +20,7 @@
   --shadow: 0 0.75rem 2rem rgba(11, 37, 69, 0.08);
   --max: 72rem;
   --gutter: 1.25rem;
-  --header-h: 5.25rem;
+  --header-h: 6.25rem;
   --section-y: 5.5rem;
 }
 
@@ -50,6 +50,9 @@ address { font-style: normal; }
 
 .skip-link { position: absolute; left: -999px; top: 0.5rem; z-index: 100; background: var(--navy); color: #fff; padding: 0.5rem 1rem; border-radius: 0.5rem; }
 .skip-link:focus { left: 0.5rem; }
+
+/* Blessing line at the very top */
+.blessing { margin: 0; padding: 0.4rem 1rem; text-align: center; font-family: "Noto Sans Kannada", sans-serif; font-weight: 600; font-size: 1.15rem; color: var(--navy); background: linear-gradient(90deg, var(--amber-light), #fff 50%, var(--amber-light)); border-bottom: 1px solid #f3e2b8; }
 
 .eyebrow {
   font-size: 0.8rem;
@@ -101,7 +104,7 @@ address { font-style: normal; }
 .header.is-scrolled { border-color: var(--border); box-shadow: 0 0.25rem 1.25rem rgba(11, 37, 69, 0.07); }
 .header__inner { display: flex; align-items: center; justify-content: space-between; height: var(--header-h); }
 .brand { display: flex; align-items: center; }
-.brand img { height: 4.4rem; width: auto; }
+.brand img { height: 5.5rem; width: auto; }
 .nav { display: flex; align-items: center; gap: 1.5rem; }
 .nav a:not(.btn) { position: relative; color: var(--ink); text-decoration: none; font-weight: 500; font-size: 0.95rem; padding: 0.25rem 0; }
 .nav a:not(.btn)::after { content: ""; position: absolute; left: 0; right: 100%; bottom: -0.15rem; height: 2px; background: var(--amber); transition: right 0.25s; }
@@ -419,6 +422,7 @@ address { font-style: normal; }
 
 /* Quality & documents */
 .docs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.doc-card--drawings { grid-column: span 2; }
 .doc-card { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--border); border-radius: 1.1rem; overflow: hidden; transition: box-shadow 0.25s, transform 0.25s; }
 .doc-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
 .doc-card__preview { display: block; padding: 1.25rem 1.25rem 0; border: 0; background: var(--bg-alt); cursor: zoom-in; height: 13rem; overflow: hidden; }
@@ -608,8 +612,8 @@ a.contact__item:hover { border-color: var(--amber); background: rgba(245, 163, 0
 
 /* Tablet portrait and phones */
 @media (max-width: 960px) {
-  :root { --header-h: 4.5rem; --section-y: 4rem; }
-  .brand img { height: 3.6rem; }
+  :root { --header-h: 5rem; --section-y: 4rem; }
+  .brand img { height: 4.4rem; }
   .nav-toggle { display: block; }
   .nav {
     position: absolute;

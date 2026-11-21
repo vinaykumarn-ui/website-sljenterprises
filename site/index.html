@@ -90,6 +90,7 @@
     <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2.3a9.7 9.7 0 0 0-8.3 14.7L2.4 21.6l4.7-1.2A9.7 9.7 0 1 0 12 2.3z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path transform="translate(7 7) scale(0.42)" fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
   </svg>
   <a class="skip-link" href="#main">Skip to content</a>
+  <p class="blessing" lang="kn">ಶ್ರೀ ಹೊನ್ನಾರುತಿ ದೇವಿ ಕೃಪೆ</p>
 
   <header class="header">
     <div class="container header__inner">
@@ -199,13 +200,18 @@
           <ul class="approval-card__list">
             <li>
               <strong>BESCOM</strong>
-              <span>All 7 pole types approved</span>
+              <span>All 7 pole types approved &middot; <button type="button" class="link-btn" data-doc="bescom">View approval</button></span>
               <em>Valid to 24.04.2030</em>
             </li>
             <li>
               <strong>CESC Mysore</strong>
               <span>All 7 pole types approved &middot; <button type="button" class="link-btn" data-doc="cesc">View approval</button></span>
               <em>Valid to March 2028</em>
+            </li>
+            <li>
+              <strong>MSME ZED Bronze</strong>
+              <span>Certified unit &middot; <button type="button" class="link-btn" data-doc="zed">View certificate</button></span>
+              <em>Issued 15.11.2026</em>
             </li>
           </ul>
 
@@ -339,8 +345,32 @@
       <div class="container">
         <p class="eyebrow">Quality &amp; documents</p>
         <h2>Tested, approved and documented</h2>
-        <p class="section__intro">Original documents from Bureau Veritas, CESC and our pole drawings. Tap any document to view it.</p>
+        <p class="section__intro">Original approvals from BESCOM and CESC, our MSME ZED certificate, the Bureau Veritas test report and our pole drawings. Tap any document to view it.</p>
         <div class="docs">
+          <article class="doc-card">
+            <button type="button" class="doc-card__preview" data-doc="bescom" aria-label="View the BESCOM vendor approval">
+              <picture><source srcset="assets/img/docs/bescom-vendor-approval-2026.webp" type="image/webp"><img src="assets/img/docs/bescom-vendor-approval-2026.jpg" alt="" width="313" height="480" loading="lazy"></picture>
+            </button>
+            <div class="doc-card__body">
+              <span class="tag tag--block">Vendor approval</span>
+              <h3>BESCOM vendor approval</h3>
+              <p class="doc-card__meta">Official Memorandum dated 18.07.2026 &middot; valid up to 24.04.2030</p>
+              <p>Bangalore Electricity Supply Company renewed SLJ Enterprises as an approved vendor for the supply of all seven pole types, for electrification in the BESCOM area including self-execution, turnkey and action plan works and purchase orders. Validity is subject to revalidation once in 2 years.</p>
+              <button type="button" class="btn btn--small" data-doc="bescom">View approval</button>
+            </div>
+          </article>
+          <article class="doc-card">
+            <button type="button" class="doc-card__preview" data-doc="zed" aria-label="View the ZED Bronze certificate">
+              <picture><source srcset="assets/img/docs/zed-certificate-bronze.webp" type="image/webp"><img src="assets/img/docs/zed-certificate-bronze.jpg" alt="" width="339" height="480" loading="lazy"></picture>
+            </button>
+            <div class="doc-card__body">
+              <span class="tag tag--spun">Certificate</span>
+              <h3>MSME ZED Bronze certificate</h3>
+              <p class="doc-card__meta">Issued 15.11.2026 &middot; valid for three years</p>
+              <p>Ministry of Micro, Small &amp; Medium Enterprises certificate under the MSME Sustainable (ZED) Certification Scheme, awarded to our Dabaspet unit. Certificate No. 15112026_1083984.</p>
+              <button type="button" class="btn btn--small" data-doc="zed">View certificate</button>
+            </div>
+          </article>
           <article class="doc-card">
             <button type="button" class="doc-card__preview" data-doc="bv" aria-label="View the Bureau Veritas test report">
               <picture><source srcset="assets/img/docs/bureau-veritas-test-report.webp" type="image/webp"><img src="assets/img/docs/bureau-veritas-test-report.jpg" alt="" width="339" height="480" loading="lazy"></picture>
@@ -586,11 +616,15 @@
           </details>
           <details>
             <summary>Are you an approved vendor for BESCOM?</summary>
-            <p>Yes. SLJ Enterprises is an approved vendor to BESCOM for all seven poles above. The approval was renewed in July 2026 and is valid up to 24.04.2030, subject to revalidation.</p>
+            <p>Yes. SLJ Enterprises is an approved vendor to BESCOM for all seven poles above. The approval was renewed by Official Memorandum dated 18.07.2026 and is valid up to 24.04.2030, subject to revalidation. <button type="button" class="link-btn" data-doc="bescom">View the approval</button>.</p>
           </details>
           <details>
             <summary>Are you an approved vendor for CESC Mysore?</summary>
             <p>Yes. CESC renewed our vendor approval for all seven pole types by Official Memorandum dated 27.03.2026, valid up to March 2028. <button type="button" class="link-btn" data-doc="cesc">View the approval</button>.</p>
+          </details>
+          <details>
+            <summary>Are you ZED certified?</summary>
+            <p>Yes. Our Dabaspet unit holds the MSME ZED Bronze certificate under the MSME Sustainable (ZED) Certification Scheme, issued on 15.11.2026 and valid for three years. <button type="button" class="link-btn" data-doc="zed">View the certificate</button>.</p>
           </details>
           <details>
             <summary>Are your poles tested?</summary>
